@@ -1,3 +1,19 @@
+<script lang="ts">
+  export let data:any;
+  const { posts } = data;
+</script>
+
 <h1>Blog</h1>
 
-<p>My blog post will go here</p>
+<ul>
+  {#each posts as post}
+    <li>
+      <h2>
+        <a href="{post.path}">
+          {post.meta.title}
+        </a>
+      </h2>
+      Published: {post.meta.date}
+    </li>
+  {/each}
+</ul>

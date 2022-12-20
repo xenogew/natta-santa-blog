@@ -18,21 +18,13 @@
 			<svelte:fragment slot="trail">
 				<a
 					class="btn btn-sm btn-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
-					target="_blank"
-					rel="noreferrer">Discord</a
+					href="/blog"
+					rel="noreferrer">Blog</a
 				>
 				<a
 					class="btn btn-sm btn-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
-					target="_blank"
-					rel="noreferrer">Twitter</a
-				>
-				<a
-					class="btn btn-sm btn-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
-					rel="noreferrer">GitHub</a
+					href="/about"
+					rel="noreferrer">About</a
 				>
 			</svelte:fragment>
 		</AppBar>
