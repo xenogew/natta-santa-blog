@@ -16,16 +16,8 @@
 				</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<a
-					class="btn btn-sm btn-ghost-surface"
-					href="/blog"
-					rel="noreferrer">Blog</a
-				>
-				<a
-					class="btn btn-sm btn-ghost-surface"
-					href="/about"
-					rel="noreferrer">About</a
-				>
+				<a class="btn btn-sm btn-ghost-surface" href="/blog" rel="noreferrer">Blog</a>
+				<a class="btn btn-sm btn-ghost-surface" href="/about" rel="noreferrer">About</a>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>

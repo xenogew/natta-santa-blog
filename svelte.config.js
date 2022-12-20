@@ -14,7 +14,7 @@ const config = {
 		}),
 		mdsvex({
 			extensions: ['.md']
-		}),
+		})
 	],
 	vitePlugin: {
 		experimental: {
