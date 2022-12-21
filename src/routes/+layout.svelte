@@ -22,5 +22,7 @@
 		</AppBar>
 	</svelte:fragment>
 	<!-- Page Route Content -->
-	<slot />
+	<div class="m-6">
+		<slot />
+	</div>
 </AppShell>
