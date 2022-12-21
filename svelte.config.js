@@ -9,11 +9,11 @@ const config = {
 	},
 	extensions: ['.svelte', '.md'],
 	preprocess: [
-		preprocess({
-			postcss: true
-		}),
 		mdsvex({
 			extensions: ['.md']
+		}),
+		preprocess({
+			postcss: true
 		})
 	],
 	vitePlugin: {

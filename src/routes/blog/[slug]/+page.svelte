@@ -1,9 +1,16 @@
 <script lang="ts">
 	export let data: BlogPost;
-	const { Content, tags } = data;
+	const { title, Content, tags } = data;
 </script>
 
-<article>
+<svelte:head>
+	<title>Blog - {title}</title>
+	<meta name="description" content={title} />
+</svelte:head>
+
+<article
+	class="w-max-prose prose prose-lg dark:text-primary-100 prose-headings:dark:text-primary-300 prose-strong:dark:text-primary-200"
+>
 	<Content />
 
 	<p class="my-2 text-sm">
