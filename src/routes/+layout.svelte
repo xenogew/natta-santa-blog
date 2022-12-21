@@ -3,6 +3,7 @@
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import Icons from '$lib/icons/natta-santa-hat.svelte';
 </script>
 
 <!-- App Shell -->
@@ -12,7 +13,10 @@
 		<AppBar>
 			<svelte:fragment slot="lead">
 				<strong class="text-xl uppercase">
-					<a href="/">Natta Santa Blog</a>
+					<a href="/" class="flex">
+						<span class="mr-4"><Icons /></span>
+						<span class="content-center m-auto">Natta Santa Blog</span>
+					</a>
 				</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
