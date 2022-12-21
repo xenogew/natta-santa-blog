@@ -1,10 +1,8 @@
 <script lang="ts">
-	export let data: any;
-	const { title, date, Content } = data;
+	export let data: BlogPost;
+	const { Content } = data;
 </script>
 
-<article>
-	<h1>{title}</h1>
-	<p>Published: {date}</p>
+<article class="m-8">
 	<Content />
 </article>
