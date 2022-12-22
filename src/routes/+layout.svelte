@@ -4,6 +4,8 @@
 	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
 	import Icons from '$lib/icons/natta-santa-hat.svelte';
+	import { fade } from 'svelte/transition';
+	export let data:any;
 </script>
 
 <!-- App Shell -->
@@ -27,6 +29,10 @@
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<div class="m-6">
-		<slot />
+		{#key data.currentRoute}
+			<main in:fade={{ duration: 150, delay: 150}} out:fade={{duration: 150}}>
+				<slot />
+			</main>
+		{/key}
 	</div>
 </AppShell>
