@@ -1,11 +1,17 @@
 <script lang="ts">
+	import type { LayoutData } from './$types';
+
 	import '@skeletonlabs/skeleton/themes/theme-rocket.css';
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import '../app.postcss';
+
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
-	import Icons from '$lib/icons/natta-santa-hat.svelte';
 	import { fade } from 'svelte/transition';
-	export let data:any;
+	import { preloadCode } from '$app/navigation';
+	import Icons from '$lib/icons/natta-santa-hat.svelte';
+	export let data: LayoutData;
+
+	preloadCode('/blog');
 </script>
 
 <!-- App Shell -->
@@ -30,7 +36,7 @@
 	<!-- Page Route Content -->
 	<div class="m-6">
 		{#key data.currentRoute}
-			<main in:fade={{ duration: 150, delay: 150}} out:fade={{duration: 150}}>
+			<main in:fade={{ duration: 150, delay: 150 }} out:fade={{ duration: 150 }}>
 				<slot />
 			</main>
 		{/key}
