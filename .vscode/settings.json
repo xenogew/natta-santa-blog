@@ -1,3 +1,5 @@
 {
-	"workbench.editor.labelFormat": "short"
+	"workbench.editor.labelFormat": "short",
+	"explorer.sortOrder": "filesFirst",
+	"explorer.compactFolders": false
 }
