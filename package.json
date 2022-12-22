@@ -15,6 +15,7 @@
 		"clean": "rm -rf .svelte-kit .vercel_build_output build node_modules"
 	},
 	"devDependencies": {
+		"@iconify/svelte": "^3.0.1",
 		"@playwright/test": "^1.28.1",
 		"@skeletonlabs/skeleton": "^0.80.9",
 		"@sveltejs/adapter-auto": "^1.0.0",

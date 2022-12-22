@@ -7,11 +7,9 @@
 
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
 	import { fade } from 'svelte/transition';
-	import { preloadCode } from '$app/navigation';
 	import Icons from '$lib/icons/natta-santa-hat.svelte';
-	export let data: LayoutData;
 
-	preloadCode('/blog');
+	export let data: LayoutData;
 </script>
 
 <!-- App Shell -->
