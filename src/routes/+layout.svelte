@@ -8,6 +8,7 @@
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
 	import { fade } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
+	import BuyMeCoffee from '$lib/components/BuyMeCoffee.svelte';
 
 	export let data: LayoutData;
 </script>
@@ -41,4 +42,12 @@
 			</main>
 		{/key}
 	</div>
+
+	<svelte:fragment slot="footer">
+		<AppBar>
+			<svelte:fragment slot="trail">
+				<BuyMeCoffee bmcId="xenogew" bmcText="Buy me a coffee" />
+			</svelte:fragment>
+		</AppBar>
+	</svelte:fragment>
 </AppShell>

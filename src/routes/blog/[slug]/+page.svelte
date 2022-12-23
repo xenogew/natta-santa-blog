@@ -1,8 +1,6 @@
 <script lang="ts">
 	export let data: BlogPost;
 	const { title, Content, tags } = data;
-
-	import BuyMeCoffee from '$lib/components/BuyMeCoffee.svelte';
 </script>
 
 <svelte:head>
@@ -22,5 +20,3 @@
 		{/each}
 	</p>
 </article>
-
-<BuyMeCoffee bmcId="xenogew" bmcText="Buy me a coffee" />
