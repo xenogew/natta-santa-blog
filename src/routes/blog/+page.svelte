@@ -18,8 +18,11 @@
 						{post.meta.title}
 					</a>
 				</dt>
-				<dd class="text-[0.6rem] opacity-60 dark:text-accent-300 text-accent-600 flex flex-row gap-1">
-					<Icon icon="grommet-icons:calendar" inline={true} /> {post.meta.date}
+				<dd
+					class="text-[0.6rem] opacity-60 dark:text-accent-300 text-accent-600 flex flex-row gap-1"
+				>
+					<Icon icon="grommet-icons:calendar" inline={true} />
+					{post.meta.date}
 				</dd>
 			</span>
 		</div>
