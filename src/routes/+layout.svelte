@@ -7,7 +7,7 @@
 
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
 	import { fade } from 'svelte/transition';
-	import Icons from '$lib/icons/natta-santa-hat.svelte';
+	import Icon from '@iconify/svelte';
 
 	export let data: LayoutData;
 </script>
@@ -20,7 +20,9 @@
 			<svelte:fragment slot="lead">
 				<strong class="text-xl uppercase">
 					<a href="/" class="flex">
-						<span class="mr-4"><Icons /></span>
+						<span class="mr-4">
+							<Icon icon="emojione-v1:santa-claus" inline={true} width="48" height="48" />
+						</span>
 						<span class="content-center m-auto">Natta Santa Blog</span>
 					</a>
 				</strong>
