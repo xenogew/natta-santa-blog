@@ -1,6 +1,7 @@
 <script lang="ts">
 	export let data: BlogPost;
 	const { title, Content, tags } = data;
+	import { base } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -16,7 +17,7 @@
 	<p class="my-2 text-sm">
 		Tags:
 		{#each tags as tag}
-			<a href="/blog/tags/{tag}"><span class="chip m-0.5">{tag}</span></a>
+			<a href="{base}/blog/tags/{tag}"><span class="chip m-0.5">{tag}</span></a>
 		{/each}
 	</p>
 </article>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import Icon from '@iconify/svelte';
+	import { base } from '$app/paths';
 
 	export let data: PageData;
 	const { posts } = data;
@@ -14,7 +15,7 @@
 			<span class="badge-icon p-3 bg-accent-500 text-base">{i + 1}</span>
 			<span class="flex-auto">
 				<dt>
-					<a href={post.path} class="text-lg">
+					<a href="{base}{post.path}" class="text-lg">
 						{post.meta.title}
 					</a>
 				</dt>

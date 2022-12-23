@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	export let data: any;
 	console.log(data.posts);
 	const { tag, posts } = data;
@@ -12,7 +13,7 @@
 		<ul>
 			{#each posts as post}
 				<li>
-					<a href={post.path}>
+					<a href="{base}{post.path}">
 						{post.meta.title}
 					</a>
 				</li>

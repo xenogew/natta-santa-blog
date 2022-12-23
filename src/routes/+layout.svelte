@@ -7,10 +7,12 @@
 
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
 	import { fade } from 'svelte/transition';
+	import { base } from '$app/paths';
 	import Icon from '@iconify/svelte';
 	import BuyMeCoffee from '$lib/components/BuyMeCoffee.svelte';
 
 	export let data: LayoutData;
+	console.log('base => ', base);
 </script>
 
 <!-- App Shell -->
@@ -20,7 +22,7 @@
 		<AppBar>
 			<svelte:fragment slot="lead">
 				<strong class="text-xl uppercase">
-					<a href="/" class="flex">
+					<a href="{base}/" class="flex">
 						<span class="mr-4">
 							<Icon icon="emojione-v1:santa-claus" inline={true} width="48" height="48" />
 						</span>
@@ -29,8 +31,18 @@
 				</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<a class="btn btn-sm btn-ghost-surface" href="/blog" rel="noreferrer">Blog</a>
-				<a class="btn btn-sm btn-ghost-surface" href="/about" rel="noreferrer">About</a>
+				<a
+					class="btn btn-sm btn-ghost-surface"
+					data-sveltekit-preload-data="tap"
+					href="{base}/blog"
+					rel="noreferrer">Blog</a
+				>
+				<a
+					class="btn btn-sm btn-ghost-surface"
+					data-sveltekit-preload-data="tap"
+					href="{base}/about"
+					rel="noreferrer">About</a
+				>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
