@@ -1,8 +1,6 @@
 <script lang="ts">
 	import type { LayoutData } from './$types';
 
-	import '@skeletonlabs/skeleton/themes/theme-rocket.css';
-	import '@skeletonlabs/skeleton/styles/all.css';
 	import '../app.postcss';
 
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';

@@ -1,5 +1,6 @@
+import { skeleton } from '@skeletonlabs/tw-plugin';
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
 	mode: 'jit',
 	darkMode: 'class',
 	content: [
@@ -12,6 +13,8 @@ module.exports = {
 	plugins: [
 		require('@tailwindcss/forms'),
 		require('@tailwindcss/typography'),
-		require('@skeletonlabs/skeleton/tailwind/theme.cjs')
+		skeleton({
+			themes: { preset: [ "rocket" ] }
+		})
 	]
 };
