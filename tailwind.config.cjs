@@ -14,7 +14,7 @@ export default {
 		require('@tailwindcss/forms'),
 		require('@tailwindcss/typography'),
 		skeleton({
-			themes: { preset: [ "rocket" ] }
+			themes: { preset: ['rocket'] }
 		})
 	]
 };

@@ -4,6 +4,7 @@
 	import '../app.postcss';
 
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import { LightSwitch } from '@skeletonlabs/skeleton';
 	import { fade } from 'svelte/transition';
 	import { base } from '$app/paths';
 	import Icon from '@iconify/svelte';
@@ -29,6 +30,7 @@
 				</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
+				<LightSwitch />
 				<a
 					class="btn btn-sm btn-ghost-surface"
 					data-sveltekit-preload-data="tap"
@@ -45,7 +47,7 @@
 		</AppBar>
 	</svelte:fragment>
 	<!-- Page Route Content -->
-	<div class="m-6">
+	<div class="mx-6">
 		{#key data.currentRoute}
 			<main in:fade={{ duration: 150, delay: 150 }} out:fade={{ duration: 150 }}>
 				<slot />
