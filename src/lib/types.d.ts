@@ -4,3 +4,10 @@ type BlogPost = {
 	date: Date;
 	tags: Array<string>;
 };
+
+type TimelineItem = {
+	title: string,
+	timestamp: string,
+	description: string,
+	badgeText: null | undefined | string
+}
