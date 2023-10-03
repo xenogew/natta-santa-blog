@@ -6,8 +6,8 @@ type BlogPost = {
 };
 
 type TimelineItem = {
-	title: string,
-	timestamp: string,
-	description: string,
-	badgeText: null | undefined | string
-}
+	title: string;
+	timestamp: string;
+	description: string;
+	badgeText: null | undefined | string;
+};
