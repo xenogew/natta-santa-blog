@@ -1,10 +1,14 @@
 <script lang="ts">
+	import type { LayoutData } from './$types';
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import Timeline from '$lib/components/Timeline.svelte';
 	import TimelineItem from '$lib/components/TimelineItem.svelte';
 	import KeywordHighlight from '$lib/components/KeywordHighlight.svelte';
 
 	import {timelines} from '$lib/data/natta-timeline.json';
+
+	export let data: LayoutData;
+	console.log(`layoutData: ${data.currentRoute}`)
 </script>
 
 <svelte:head>
@@ -38,8 +42,7 @@
 
 	<Timeline>
 		{#each timelines as timeline}
-		<TimelineItem {...timeline}
-		icon="mdi:university" />
+		<TimelineItem {...timeline} />
 		{/each}
 	</Timeline>
 </section>

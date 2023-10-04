@@ -5,17 +5,20 @@
 	export let timestamp: string = '(timestamp)';
 	export let description: string = '(Description)';
 	export let badgeText: string = '';
-	export let icon: string | null = '';
+	export let icon: string | null = 'ri:calendar-line';
+
+	let timelineIconWidth = 24;
+	let timelineIconHeight = 24;
 </script>
 
-<li class="mb-10 ml-6">
+<li class="mb-6 ml-6">
 	<span
-		class="absolute flex items-center justify-center w-8 h-8 bg-secondary-100 rounded-full -left-4 ring-8 ring-white dark:ring-gray-900 dark:bg-secondary-900"
+		class="absolute flex items-center justify-center w-8 h-8 bg-secondary-100 rounded-full -left-4 ring-8 ring-slate-100 dark:ring-gray-900 dark:bg-secondary-900"
 	>
 		{#if !icon}
-			<Icon icon="tdesign:calendar" />
+			<Icon icon="mingcute:calendar-line" width={timelineIconWidth} height={timelineIconHeight} />
 		{:else}
-			<Icon {icon} />
+			<Icon {icon} width={timelineIconWidth} height={timelineIconHeight} />
 		{/if}
 	</span>
 	<h3 class="flex items-center mb-2 text-lg font-semibold text-primary-700 dark:text-primary-200">

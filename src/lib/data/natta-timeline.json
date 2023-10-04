@@ -2,9 +2,31 @@
 	"timelines": [
 		{
 			"title": "PSU University graduated",
-			"timestamp": "2010, 5h May",
+			"timestamp": "2010, 5th May",
 			"description": "Bachelor Degree of Computer Engineering",
-			"badgeText": "edu"
+			"badgeText": "edu",
+			"icon": "mdi:university"
+		},
+		{
+			"title": "Military Service - Thai Royal Navy",
+			"timestamp": "2010, 1st October ~ 2011, 30th March",
+			"description": "A military service as Thai male who's over 18 years old",
+			"badgeText": "citizen",
+			"icon": "mdi:ship-wheel"
+		},
+		{
+			"title": "AS&C - Java Developer",
+			"timestamp": "2011, 4th November ~ 2015, 30th May",
+			"description": "I, as the Java developer took part of the whole of the Properties (Land/Building/Machine/etc...) Appraisal system which developed by Java Spring framework, also included Angular as Front-End, On-Premise deployment.",
+			"badgeText": "First Job",
+			"icon": null
+		},
+		{
+			"title": "Back-End Java Developer",
+			"timestamp": "",
+			"description": "",
+			"badgeText": "",
+			"icon": ""
 		}
 	]
 }

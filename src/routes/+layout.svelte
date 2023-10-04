@@ -11,38 +11,38 @@
 	import BuyMeCoffee from '$lib/components/BuyMeCoffee.svelte';
 
 	export let data: LayoutData;
-	console.log('base => ', base);
 </script>
 
 <!-- App Shell -->
 <AppShell slotSidebarLeft="bg-surface-500/5 w-56 p-4">
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
-		<AppBar>
+		<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
 			<svelte:fragment slot="lead">
 				<strong class="text-xl uppercase">
 					<a href="{base}/" class="flex">
 						<span class="mr-4">
 							<Icon icon="emojione-v1:santa-claus" inline={true} width="48" height="48" />
 						</span>
-						<span class="content-center m-auto">Natta Santa Blog</span>
+						<span class="content-center m-auto">Natta Santa</span>
 					</a>
 				</strong>
 			</svelte:fragment>
+			<!-- All menu links -->
+			<a
+				class="btn btn-sm btn-ghost-surface"
+				data-sveltekit-preload-data="tap"
+				href="{base}/blog"
+				rel="noreferrer">Blog</a
+			>
+			<a
+				class="btn btn-sm btn-ghost-surface"
+				data-sveltekit-preload-data="tap"
+				href="{base}/about"
+				rel="noreferrer">About</a
+			>
 			<svelte:fragment slot="trail">
 				<LightSwitch />
-				<a
-					class="btn btn-sm btn-ghost-surface"
-					data-sveltekit-preload-data="tap"
-					href="{base}/blog"
-					rel="noreferrer">Blog</a
-				>
-				<a
-					class="btn btn-sm btn-ghost-surface"
-					data-sveltekit-preload-data="tap"
-					href="{base}/about"
-					rel="noreferrer">About</a
-				>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
