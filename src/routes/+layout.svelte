@@ -30,20 +30,32 @@
 			</svelte:fragment>
 			<!-- All menu links -->
 			<a
-				class="btn btn-sm btn-ghost-surface"
+				class="btn-top-menu"
 				data-sveltekit-preload-data="tap"
 				href="{base}/blog"
 				rel="noreferrer">Blog</a
 			>
 			<a
-				class="btn btn-sm btn-ghost-surface"
+				class="btn-top-menu"
 				data-sveltekit-preload-data="tap"
 				href="{base}/about"
 				rel="noreferrer">About</a
 			>
 			<svelte:fragment slot="trail">
-				<LightSwitch />
+				<LightSwitch rounded="rounded-switch" />
 			</svelte:fragment>
+			<style lang="postcss">
+				.rounded-switch {
+					@apply rounded-full;
+				}
+				.btn-top-menu {
+					@apply btn btn-lg
+					hover:underline
+					underline-offset-8
+					decoration-primary-900
+					dark:decoration-primary-200;
+				}
+			</style>
 		</AppBar>
 	</svelte:fragment>
 	<!-- Page Route Content -->
