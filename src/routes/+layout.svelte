@@ -29,17 +29,11 @@
 				</strong>
 			</svelte:fragment>
 			<!-- All menu links -->
-			<a
-				class="btn-top-menu"
-				data-sveltekit-preload-data="tap"
-				href="{base}/blog"
-				rel="noreferrer">Blog</a
+			<a class="btn-top-menu" data-sveltekit-preload-data="tap" href="{base}/blog" rel="noreferrer"
+				>Blog</a
 			>
-			<a
-				class="btn-top-menu"
-				data-sveltekit-preload-data="tap"
-				href="{base}/about"
-				rel="noreferrer">About</a
+			<a class="btn-top-menu" data-sveltekit-preload-data="tap" href="{base}/about" rel="noreferrer"
+				>About</a
 			>
 			<svelte:fragment slot="trail">
 				<LightSwitch rounded="rounded-switch" />

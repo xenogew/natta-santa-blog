@@ -5,10 +5,10 @@
 	import TimelineItem from '$lib/components/TimelineItem.svelte';
 	import KeywordHighlight from '$lib/components/KeywordHighlight.svelte';
 
-	import {timelines} from '$lib/data/natta-timeline.json';
+	import { timelines } from '$lib/data/natta-timeline.json';
 
 	export let data: LayoutData;
-	console.log(`layoutData: ${data.currentRoute}`)
+	console.log(`layoutData: ${data.currentRoute}`);
 </script>
 
 <svelte:head>
@@ -42,7 +42,7 @@
 
 	<Timeline>
 		{#each timelines as timeline}
-		<TimelineItem {...timeline} />
+			<TimelineItem {...timeline} />
 		{/each}
 	</Timeline>
 </section>

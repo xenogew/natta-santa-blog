@@ -11,7 +11,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test:unit": "vitest",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write .",
+		"format": "prettier --plugin-search-dir --write './src/**/*.{js,ts,postcss,css,md,json,svelte,html}'",
 		"clean": "rm -rf .svelte-kit .vercel_build_output build node_modules"
 	},
 	"devDependencies": {
@@ -48,6 +48,9 @@
 		"vite": "^4.4.11",
 		"vite-plugin-tailwind-purgecss": "^0.1.3",
 		"vitest": "^0.34.6"
+	},
+	"volta": {
+		"node": "20.8.0"
 	},
 	"type": "module"
 }

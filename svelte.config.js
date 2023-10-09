@@ -10,7 +10,8 @@ const mdsvexOptions = {
 	extensions: ['.md'],
 	rehypePlugins: [
 		slug,
-		[autoLinkHeadings,
+		[
+			autoLinkHeadings,
 			{
 				behavior: 'append'
 			}

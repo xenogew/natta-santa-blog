@@ -16,7 +16,8 @@
 		Tags:
 		{#each tags as tag}
 			<a href="{base}/blog/tags/{tag}"
-				><span class="chip m-0.5 variant-soft-secondary hover:variant-glass-secondary">{tag}</span></a
+				><span class="chip m-0.5 variant-soft-secondary hover:variant-glass-secondary">{tag}</span
+				></a
 			>
 		{/each}
 	</div>
