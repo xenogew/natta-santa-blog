@@ -12,7 +12,9 @@
 <dl class="list-dl">
 	{#each posts as post, i}
 		<div>
-			<span class="badge-icon p-3 bg-accent-500 text-base">{i + 1}</span>
+			<span class="badge-icon p-3 shadow-md bg-surface-200 dark:bg-surface-800 text-base">
+				{i + 1}
+			</span>
 			<span class="flex-auto">
 				<dt>
 					<a href="{base}{post.path}" class="text-lg">
