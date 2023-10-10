@@ -9,22 +9,25 @@
 	<meta name="description" content={title} />
 </svelte:head>
 
-<article class="markdown">
-	<Content />
+<section
+	class="max-w-4xl p-6 mx-auto my-4 bg-surface-300 sm:rounded-md shadow-md dark:bg-surface-800 relative"
+>
+	<article class="markdown">
+		<Content />
 
-	<div class="my-4 py-2 text-sm">
-		Tags:
-		{#each tags as tag}
-			<a href="{base}/blog/tags/{tag}"
-				><span class="chip m-0.5 variant-soft-secondary hover:variant-glass-secondary">{tag}</span
-				></a
-			>
-		{/each}
-	</div>
+		<div class="my-4 py-2 text-sm">
+			Tags:
+			{#each tags as tag}
+				<a href="{base}/blog/tags/{tag}"
+					><span class="chip m-0.5 variant-soft-secondary hover:variant-glass-secondary">{tag}</span
+					></a
+				>
+			{/each}
+		</div>
 
-	<style lang="postcss">
-		.markdown {
-			@apply max-w-prose
+		<style lang="postcss">
+			.markdown {
+				@apply max-w-prose
 			prose
 			prose-base
 			prose-headings:p-0
@@ -60,16 +63,16 @@
 			prose-headings:dark:text-primary-50
 			prose-strong:text-primary-700
 			prose-strong:dark:text-primary-200;
-		}
-		ul.contains-task-list {
-			@apply prose-li:list-none
+			}
+			ul.contains-task-list {
+				@apply prose-li:list-none
 			prose-ul:p-0;
-		}
-		ul.contains-task-list > li > input[type='checkbox'] {
-			@apply checkbox mr-2;
-		}
-		span.icon-link {
-			@apply w-4 h-4
+			}
+			ul.contains-task-list > li > input[type='checkbox'] {
+				@apply checkbox mr-2;
+			}
+			span.icon-link {
+				@apply w-4 h-4
 			inline-block
 			bg-no-repeat
 			my-auto
@@ -77,6 +80,7 @@
 			text-slate-600
 			dark:text-slate-300
 			bg-[url('https://api.iconify.design/akar-icons/link-chain.svg?color=%23046d7f')];
-		}
-	</style>
-</article>
+			}
+		</style>
+	</article>
+</section>
