@@ -10,7 +10,7 @@
 </svelte:head>
 
 <section
-	class="max-w-4xl p-6 mx-auto my-4 bg-surface-300 sm:rounded-md shadow-md dark:bg-surface-800 relative"
+	class="max-w-4xl p-6 mx-auto my-6 bg-surface-300 dark:bg-surface-800 sm:rounded-md shadow-md"
 >
 	<article class="markdown">
 		<Content />
@@ -28,8 +28,8 @@
 		<style lang="postcss">
 			.markdown {
 				@apply max-w-prose
+			prose-2xl
 			prose
-			prose-base
 			prose-headings:p-0
 			prose-headings:m-0
 			prose-h1:mt-4

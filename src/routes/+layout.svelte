@@ -24,7 +24,7 @@
 						<span class="mr-4">
 							<Icon icon="emojione-v1:santa-claus" inline={true} width="48" height="48" />
 						</span>
-						<span class="content-center m-auto">Natta Santa</span>
+						<span class="content-center m-auto invisible md:visible">Natta Santa</span>
 					</a>
 				</strong>
 			</svelte:fragment>
