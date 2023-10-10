@@ -73,7 +73,7 @@
 			inline-block
 			bg-no-repeat
 			my-auto
-			mx-1
+			mx-2
 			text-slate-600
 			dark:text-slate-300
 			bg-[url('https://api.iconify.design/akar-icons/link-chain.svg?color=%23046d7f')];
