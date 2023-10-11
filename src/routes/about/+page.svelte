@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { LayoutData } from './$types';
+	import type { LayoutData, PageData } from './$types';
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import Timeline from '$lib/components/Timeline.svelte';
 	import TimelineItem from '$lib/components/TimelineItem.svelte';
@@ -7,8 +7,8 @@
 
 	import { timelines } from '$lib/data/natta-timeline.json';
 
-	export let data: LayoutData;
-	console.log(`layoutData: ${data.currentRoute}`);
+	export let data: PageData;
+	let displayBio: boolean = (data.code ?? '') === 'reference_from_linkedin';
 </script>
 
 <svelte:head>
@@ -42,7 +42,7 @@
 
 	<Timeline>
 		{#each timelines as timeline}
-			<TimelineItem {...timeline} />
+			<TimelineItem {...timeline} displayPrivate={displayBio} />
 		{/each}
 	</Timeline>
 </section>
