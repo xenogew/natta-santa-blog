@@ -1,11 +1,19 @@
-type BlogPost = {
+export type MarkdownPost = {
+	slug: string;
+	title: string;
+	date: Date;
+	tags: Array<string>;
+	published: boolean;
+};
+
+export type BlogPost = {
 	Content: any;
 	title: string;
 	date: Date;
 	tags: Array<string>;
 };
 
-type TimelineItem = {
+export type TimelineItem = {
 	title: string;
 	timestamp: string;
 	description: string;

@@ -4,7 +4,7 @@
 	import { base } from '$app/paths';
 
 	export let data: PageData;
-	const { posts } = data;
+	const { currentRoute, posts } = data;
 </script>
 
 <h1 class="h1 my-3">Blog</h1>
@@ -17,15 +17,15 @@
 			</span>
 			<span class="flex-auto">
 				<dt>
-					<a href="{base}{post.path}" class="text-lg">
-						{post.meta.title}
+					<a href="{base}{currentRoute}/{post.slug}" class="text-lg">
+						{post.title}
 					</a>
 				</dt>
 				<dd
 					class="text-[0.6rem] opacity-60 dark:text-accent-300 text-accent-600 flex flex-row gap-1 items-center"
 				>
 					<Icon icon="grommet-icons:calendar" inline={true} />
-					<span class="mx-1">{post.meta.date}</span>
+					<span class="mx-1">{post.date}</span>
 				</dd>
 			</span>
 		</div>

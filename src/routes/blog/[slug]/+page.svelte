@@ -1,12 +1,16 @@
 <script lang="ts">
+	import type { BlogPost } from '$lib/types';
+	import { base } from '$app/paths';
+
 	export let data: BlogPost;
 	const { title, Content, tags } = data;
-	import { base } from '$app/paths';
 </script>
 
 <svelte:head>
 	<title>Blog - {title}</title>
 	<meta name="description" content={title} />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content={title} />
 </svelte:head>
 
 <section
@@ -38,7 +42,8 @@
 			prose-h3:my-3
 			prose-p:my-0
 			prose-li:my-0.5
-			prose-li:leading-5
+			prose-li:text-xl
+			prose-li:leading-7
 			prose-li:marker:text-primary-900
 			prose-li:marker:dark:text-primary-50
 			prose-blockquote:my-3
@@ -62,7 +67,11 @@
 			prose-headings:text-primary-900
 			prose-headings:dark:text-primary-50
 			prose-strong:text-primary-700
-			prose-strong:dark:text-primary-200;
+			prose-strong:dark:text-primary-200
+			prose-hr:my-12
+			prose-hr:border-2
+			prose-hr:!border-surface-400
+			prose-hr:dark:!border-surface-700;
 			}
 			ul.contains-task-list {
 				@apply prose-li:list-none
