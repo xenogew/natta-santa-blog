@@ -9,7 +9,23 @@
 
 <h1 class="h1 my-3">Blog</h1>
 
+<!-- <div class="card rounded-md w-full md:w-64 bg-initial">
+	<header class="card-header">{posts[0].title}</header>
+	<section class="p-4">(content)</section>
+	<footer class="card-footer border-t border-surface-500 py-4 text-end">
+		{#each posts[0].tags as tag}
+		<span class="chip m-0.5 variant-soft-secondary hover:variant-glass-secondary">{tag}</span>
+		{/each}
+	</footer>
+</div> -->
+
 <dl class="list-dl">
+	{#if posts && posts.length === 0}
+		<div class="flex flex-col">
+			<h1 class="md:h2 break-all my-4">There's no published posts right now...</h1>
+			<Icon icon="noto:evergreen-tree" class="w-48 md:w-96 h-48 md:h-96" />
+		</div>
+	{/if}
 	{#each posts as post, i}
 		<div>
 			<span class="badge-icon p-3 shadow-md bg-surface-200 dark:bg-surface-800 text-base">
