@@ -2,9 +2,13 @@
 	import type { PageData } from './$types';
 	import Icon from '@iconify/svelte';
 	import { base } from '$app/paths';
+	import { modeCurrent } from '@skeletonlabs/skeleton';
 
 	export let data: PageData;
 	const { currentRoute, posts } = data;
+
+	$: lightMode = $modeCurrent ? 'line-md:sun-rising-twotone-loop' : 'line-md:moon-loop';
+	$: themeColor = $modeCurrent ? '#FF5F1F' : '#FFEF00';
 </script>
 
 <h1 class="h1 my-3">Blog</h1>
@@ -23,7 +27,12 @@
 	{#if posts && posts.length === 0}
 		<div class="flex flex-col">
 			<h1 class="md:h2 break-all my-4">There's no published posts right now...</h1>
-			<Icon icon="noto:evergreen-tree" class="w-48 md:w-96 h-48 md:h-96" />
+			<div class="flex flex-col items-stretch">
+				<div class="self-start">
+					<Icon icon={lightMode} color={themeColor} class="w-16 md:w-24 h-16 md:h-24" />
+				</div>
+				<div><Icon icon="noto:evergreen-tree" class="w-48 md:w-96 h-48 md:h-96" /></div>
+			</div>
 		</div>
 	{/if}
 	{#each posts as post, i}
