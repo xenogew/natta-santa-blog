@@ -1,5 +1,6 @@
 {
 	"workbench.editor.labelFormat": "short",
 	"explorer.sortOrder": "filesFirst",
-	"explorer.compactFolders": false
+	"explorer.compactFolders": false,
+	"circleci.persistedProjectSelection": []
 }

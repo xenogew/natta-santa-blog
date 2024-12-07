@@ -18,4 +18,6 @@ export type TimelineItem = {
 	timestamp: string;
 	description: string;
 	badgeText: null | undefined | string;
+	icon: string | null;
+	pub?: boolean;
 };

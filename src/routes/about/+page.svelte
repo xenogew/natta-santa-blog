@@ -2,13 +2,11 @@
 	import type { LayoutData, PageData } from './$types';
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import Timeline from '$lib/components/Timeline.svelte';
-	import TimelineItem from '$lib/components/TimelineItem.svelte';
 	import KeywordHighlight from '$lib/components/KeywordHighlight.svelte';
-
-	import { timelines } from '$lib/data/natta-timeline.json';
 
 	export let data: PageData;
 	let displayBio: boolean = (data.code ?? '') === 'reference_from_linkedin';
+	import { timelines } from '$lib/data/natta-timeline.json';
 </script>
 
 <svelte:head>
@@ -40,9 +38,5 @@
 >
 	<h1 class="h1 font-sans mb-8">Bio Timeline</h1>
 
-	<Timeline>
-		{#each timelines as timeline}
-			<TimelineItem {...timeline} displayPrivate={displayBio} />
-		{/each}
-	</Timeline>
+	<Timeline {timelines} displayPrivate={displayBio}/>
 </section>

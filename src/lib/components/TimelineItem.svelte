@@ -1,16 +1,23 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
+	import type { TimelineItem } from '$lib/types';
 
-	export let title: string = '(Title)';
-	export let timestamp: string = '(timestamp)';
-	export let description: string = '(Description)';
-	export let badgeText: string = '';
-	export let icon: string | null = 'ri:calendar-line';
-	export let pub: boolean = false;
-	export let displayPrivate: boolean = false;
+	type Props = TimelineItem & {
+		displayPrivate: boolean;
+	}
 
-	let timelineIconWidth = 24;
-	let timelineIconHeight = 24;
+	let {
+		title = '(Title)',
+		timestamp = '(timestamp)',
+		description = '(Description)',
+		badgeText = '',
+		icon = 'ri:calendar-line',
+		pub = false,
+		displayPrivate = false,
+	}: Props = $props();
+
+	let timelineIconWidth = $state(24);
+	let timelineIconHeight = $state(24);
 </script>
 
 {#if pub || displayPrivate}
@@ -39,9 +46,5 @@
 		<p class="mb-4 text-base font-normal text-secondary-500 dark:text-secondary-400">
 			{@html description}
 		</p>
-		<!-- Slot: Default -->
-		{#if $$slots.default}
-			<div><slot /></div>
-		{/if}
 	</li>
 {/if}

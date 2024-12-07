@@ -1,6 +1,9 @@
 <script lang="ts">
-	export let bmcId: string;
-	export let bmcText: string;
+	interface Props {
+		bmcId: string;
+		bmcText: string;
+	}
+	let { bmcId, bmcText }: Props = $props();
 </script>
 
 <div class="bmc-btn-container">

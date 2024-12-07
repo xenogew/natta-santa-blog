@@ -1,5 +1,5 @@
 import adapter from '@sveltejs/adapter-vercel';
-import preprocess from 'svelte-preprocess';
+import { sveltePreprocess } from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 import slug from 'rehype-slug';
 import autoLinkHeadings from 'rehype-autolink-headings';
@@ -31,7 +31,7 @@ const config = {
 	extensions: ['.svelte', '.md'],
 	preprocess: [
 		mdsvex(mdsvexOptions),
-		preprocess({
+		sveltePreprocess({
 			postcss: true
 		})
 	],
