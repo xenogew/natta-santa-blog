@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { LayoutData, PageData } from './$types';
-	import { Avatar } from '@skeletonlabs/skeleton';
+	import { Avatar } from '@skeletonlabs/skeleton-svelte';
 	import Timeline from '$lib/components/Timeline.svelte';
 	import KeywordHighlight from '$lib/components/KeywordHighlight.svelte';
 
@@ -18,7 +18,12 @@
 >
 	<div class="flex flex-row gap-3 justify-items-center">
 		<div class="basis-1/5 grow-0">
-			<Avatar src="santa-avatar.svg" width="w-32" rounded="rounded-full" class="mx-auto" />
+			<Avatar
+				name="Santa"
+				src="santa-avatar.svg"
+				rounded="rounded-full"
+				classes="mx-auto w-32 h-32"
+			/>
 		</div>
 		<div class="basis-4/5">
 			<h2 class="h2 font-mono mb-4">Hello, I'm Natta</h2>
@@ -38,5 +43,5 @@
 >
 	<h1 class="h1 font-sans mb-8">Bio Timeline</h1>
 
-	<Timeline {timelines} displayPrivate={displayBio}/>
+	<Timeline {timelines} displayPrivate={displayBio} />
 </section>
