@@ -17,7 +17,7 @@
 </svelte:head>
 
 <section
-	class="max-w-4xl p-6 mx-auto my-4 bg-sky-200 sm:rounded-md shadow-md dark:bg-sky-700 relative"
+	class="max-w-4xl p-6 mx-auto my-4 bg-sky-100 sm:rounded-md shadow-md dark:bg-sky-700 relative"
 >
 	<div class="flex flex-row gap-3 justify-items-center">
 		<div class="basis-1/5 grow-0">
