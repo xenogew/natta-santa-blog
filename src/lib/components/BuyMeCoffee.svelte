@@ -1,8 +1,8 @@
 <script lang="ts">
-	interface Props {
+	type Props = {
 		bmcId: string;
 		bmcText: string;
-	}
+	};
 	let { bmcId, bmcText }: Props = $props();
 </script>
 

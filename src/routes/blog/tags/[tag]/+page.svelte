@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	export let data: any;
+	import type { PageData } from './$types';
+
+	type Props = {
+		data: PageData;
+	};
+	let { data }: Props = $props();
 	const { tag, posts } = data;
 </script>
 

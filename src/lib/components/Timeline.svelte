@@ -2,10 +2,10 @@
 	import TimelineItem from '$lib/components/TimelineItem.svelte';
 	import type { TimelineItem as TLType } from '$lib/types';
 
-	interface Props {
+	type Props = {
 		timelines: Array<TLType>;
 		displayPrivate: boolean;
-	}
+	};
 	let { timelines, displayPrivate }: Props = $props();
 </script>
 

@@ -3,7 +3,11 @@
 	import Icon from '@iconify/svelte';
 	import { base } from '$app/paths';
 
-	let { data } = $props();
+	type Props = {
+		data: PageData;
+	};
+
+	let { data }: Props = $props();
 	const { currentRoute, posts } = data;
 
 	const themeMode = $derived(
@@ -13,16 +17,6 @@
 </script>
 
 <h1 class="h1 my-3">Blog</h1>
-
-<!-- <div class="card rounded-md w-full md:w-64 bg-initial">
-	<header class="card-header">{posts[0].title}</header>
-	<section class="p-4">(content)</section>
-	<footer class="card-footer border-t border-surface-500 py-4 text-end">
-		{#each posts[0].tags as tag}
-		<span class="chip m-0.5 variant-soft-secondary hover:variant-glass-secondary">{tag}</span>
-		{/each}
-	</footer>
-</div> -->
 
 <dl class="list-dl">
 	{#if posts && posts.length === 0}

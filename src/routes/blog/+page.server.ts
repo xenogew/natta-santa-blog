@@ -1,4 +1,4 @@
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
 
 export const load = (async ({ fetch }) => {
 	const response = await fetch(`/api/posts`);
@@ -7,4 +7,4 @@ export const load = (async ({ fetch }) => {
 	return {
 		posts
 	};
-}) satisfies PageLoad;
+}) satisfies PageServerLoad;

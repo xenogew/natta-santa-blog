@@ -4,6 +4,7 @@ export type MarkdownPost = {
 	date: Date;
 	tags: Array<string>;
 	published: boolean;
+	path?: string;
 };
 
 export type BlogPost = {

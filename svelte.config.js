@@ -1,6 +1,7 @@
 import adapter from '@sveltejs/adapter-vercel';
 import { sveltePreprocess } from 'svelte-preprocess';
-import { mdsvex } from 'mdsvex';
+import { mdsvex, escapeSvelte } from 'mdsvex';
+import { createHighlighter } from 'shiki';
 import slug from 'rehype-slug';
 import autoLinkHeadings from 'rehype-autolink-headings';
 import remarkHeadingId from 'remark-heading-id';
@@ -17,7 +18,25 @@ const mdsvexOptions = {
 			}
 		]
 	],
-	remarkPlugins: [remarkHeadingId]
+	remarkPlugins: [remarkHeadingId],
+	Highlight: {
+		highlighter: async (code, lang = 'text') => {
+			const highlighter = await createHighlighter({
+				themes: ['poimandres'],
+				langs: ['javascript', 'typescript', 'java']
+			});
+			await highlighter.loadLanguage('javascript', 'typescript', 'java');
+			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: 'poimandres' }));
+			return `{@html \`${html}\`}`;
+		}
+	},
+	schema: {
+		type: 'object',
+		properties: {
+			title: { type: 'string' },
+			description: { type: 'string' }
+		}
+	}
 };
 
 /** @type {import('@sveltejs/kit').Config} */

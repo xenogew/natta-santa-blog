@@ -2,7 +2,10 @@
 	import type { BlogPost } from '$lib/types';
 	import { base } from '$app/paths';
 
-	export let data: BlogPost;
+	type Props = {
+		data: BlogPost;
+	};
+	let { data }: Props = $props();
 	const { title, Content, tags } = data;
 </script>
 
