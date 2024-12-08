@@ -44,7 +44,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/natta-santa' : ''
+			base: process.env.NODE_ENV === 'production' ? '' : '/natta-santa'
 		}
 	},
 	extensions: ['.svelte', '.md'],
