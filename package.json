@@ -57,7 +57,7 @@
 		"@sveltejs/vite-plugin-svelte": "^5.0.0"
 	},
 	"volta": {
-		"node": "20.8.0"
+		"node": "23.3.0"
 	},
 	"type": "module"
 }
