@@ -3,6 +3,7 @@
 	import Icon from '@iconify/svelte';
 	import { base } from '$app/paths';
 	import { checkCurrentMode } from '$lib/utils';
+	import { onMount } from 'svelte';
 
 	type Props = {
 		data: PageData;
@@ -10,11 +11,15 @@
 
 	let { data }: Props = $props();
 	const { currentRoute, posts } = data;
+	let currentMode: string = 'light';
+	onMount(() => {
+		currentMode = checkCurrentMode(document);
+	})
 
 	const themeMode = $derived(
-		checkCurrentMode(document) === 'light' ? 'line-md:sun-rising-twotone-loop' : 'line-md:moon-loop'
+		currentMode === 'light' ? 'line-md:sun-rising-twotone-loop' : 'line-md:moon-loop'
 	);
-	const themeColor = $derived(checkCurrentMode(document) === 'light' ? '#FF5F1F' : '#FFEF00');
+	const themeColor = $derived(currentMode === 'light' ? '#FF5F1F' : '#FFEF00');
 </script>
 
 <h1 class="h1 my-3">Blog</h1>

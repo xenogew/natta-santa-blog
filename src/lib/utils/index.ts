@@ -23,4 +23,4 @@ export const fetchMarkdownPost = async () => {
 };
 
 export const checkCurrentMode = (document: Document) =>
-	document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+	document?.documentElement.classList.contains('dark') ? 'dark' : 'light';

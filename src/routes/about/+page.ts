@@ -1,7 +1,11 @@
 import type { PageLoad } from './$types';
+import { onMount } from 'svelte';
 
 export const load = (async ({ url }) => {
-	const code: string = url.searchParams.get('code') ?? '';
+	let code: string = '';
+	onMount(() => {
+		code = url.searchParams.get('code') ?? '';
+	});
 
 	return {
 		code
