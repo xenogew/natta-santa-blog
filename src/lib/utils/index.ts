@@ -21,3 +21,6 @@ export const fetchMarkdownPost = async () => {
 		return new Date(second.date).getTime() - new Date(first.date).getTime();
 	});
 };
+
+export const checkCurrentMode = (document: Document) =>
+	document.documentElement.classList.contains('dark') ? 'dark' : 'light';

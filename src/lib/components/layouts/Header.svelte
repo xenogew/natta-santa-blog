@@ -4,8 +4,6 @@
 	import Icon from '@iconify/svelte';
 	import { base } from '$app/paths';
 	import ThemeSwitch from '$lib/components/ThemeSwitch.svelte';
-
-	let { data } = $props();
 </script>
 
 <!-- App Bar -->

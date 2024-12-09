@@ -19,7 +19,7 @@ const mdsvexOptions = {
 		]
 	],
 	remarkPlugins: [remarkHeadingId],
-	Highlight: {
+	highlight: {
 		highlighter: async (code, lang = 'text') => {
 			const highlighter = await createHighlighter({
 				themes: ['poimandres'],
@@ -30,13 +30,6 @@ const mdsvexOptions = {
 			return `{@html \`${html}\`}`;
 		}
 	},
-	schema: {
-		type: 'object',
-		properties: {
-			title: { type: 'string' },
-			description: { type: 'string' }
-		}
-	}
 };
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -44,7 +37,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '' : '/natta-santa'
+			base: ''
 		}
 	},
 	extensions: ['.svelte', '.md'],

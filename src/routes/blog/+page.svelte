@@ -2,6 +2,7 @@
 	import type { PageData } from './$types';
 	import Icon from '@iconify/svelte';
 	import { base } from '$app/paths';
+	import { checkCurrentMode } from '$lib/utils';
 
 	type Props = {
 		data: PageData;
@@ -11,9 +12,9 @@
 	const { currentRoute, posts } = data;
 
 	const themeMode = $derived(
-		localStorage.theme === 'light' ? 'line-md:sun-rising-twotone-loop' : 'line-md:moon-loop'
+		checkCurrentMode(document) === 'light' ? 'line-md:sun-rising-twotone-loop' : 'line-md:moon-loop'
 	);
-	const themeColor = $derived(localStorage.theme === 'light' ? '#FF5F1F' : '#FFEF00');
+	const themeColor = $derived(checkCurrentMode(document) === 'light' ? '#FF5F1F' : '#FFEF00');
 </script>
 
 <h1 class="h1 my-3">Blog</h1>

@@ -1,12 +1,8 @@
 <script lang="ts">
 	import type { LayoutData } from './$types';
 	import type { Snippet } from 'svelte';
-
 	import '../app.postcss';
-
-	import { AppBar } from '@skeletonlabs/skeleton-svelte';
 	import { fade } from 'svelte/transition';
-	import Icon from '@iconify/svelte';
 	import Header from '$lib/components/layouts/Header.svelte';
 	import Footer from '$lib/components/layouts/Footer.svelte';
 
