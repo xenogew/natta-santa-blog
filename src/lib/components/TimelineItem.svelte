@@ -31,7 +31,7 @@
 				<Icon {icon} width={timelineIconWidth} height={timelineIconHeight} />
 			{/if}
 		</span>
-		<h3 class="flex items-center mb-2 text-lg font-semibold text-primary-700 dark:text-primary-200">
+		<h1 class="flex items-center mb-2 text-lg font-semibold text-primary-700 dark:text-primary-200">
 			{title}
 			{#if badgeText}
 				<span
@@ -39,7 +39,7 @@
 					>{badgeText.toUpperCase()}</span
 				>
 			{/if}
-		</h3>
+		</h1>
 		<time class="block mb-2 text-sm font-normal leading-none text-surface-400 dark:text-surface-500"
 			>on {timestamp}</time
 		>
