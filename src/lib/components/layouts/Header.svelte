@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { AppBar } from '@skeletonlabs/skeleton-svelte';
 	import Icon from '@iconify/svelte';
 	import { base } from '$app/paths';
@@ -11,7 +11,7 @@
 	{#snippet lead()}
 		<div class="text-xl uppercase flex items-center justify-center">
 			<a href="{base}/" class="flex items-center">
-				{#if $page.url.pathname !== '/about'}
+				{#if page.url.pathname !== '/about'}
 					<span class="mr-4">
 						<Icon icon="emojione-v1:santa-claus" inline={true} width="48" height="48" />
 					</span>
