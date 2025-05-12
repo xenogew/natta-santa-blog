@@ -8,13 +8,13 @@
 
 <div class="bmc-btn-container">
 	<a
-		class="bg-yellow-400 p-2 inline-flex items-center border-none font-normal hover:bg-yellow-300 rounded-lg box-border"
+		class="box-border inline-flex items-center rounded-lg border-none bg-yellow-400 p-2 font-normal hover:bg-yellow-300"
 		target="_blank"
 		href="http://buymeacoffee.com/{bmcId}"
 		rel="noreferrer"
 	>
 		<svg
-			class="h-4 border-none align-middle my-0 shrink-0 shadow-none"
+			class="my-0 h-4 shrink-0 border-none align-middle shadow-none"
 			viewBox="0 0 884 1279"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +73,7 @@
 			/>
 		</svg>
 		<span
-			class="font-comic font-bold text-sm text-slate-900 dark:text-slate-900 w-full cursor-pointer inline-block ml-1"
+			class="font-comic ml-1 inline-block w-full cursor-pointer text-sm font-bold text-slate-900 dark:text-slate-900"
 			>{bmcText}</span
 		></a
 	>

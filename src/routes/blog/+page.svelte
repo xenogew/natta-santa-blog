@@ -23,18 +23,18 @@
 <dl class="list-dl">
 	{#if posts && posts.length === 0}
 		<div class="flex flex-col">
-			<h1 class="md:h2 break-all my-4">There's no published posts right now...</h1>
+			<h1 class="md:h2 my-4 break-all">There's no published posts right now...</h1>
 			<div class="flex flex-col items-stretch">
 				<div class="self-start">
-					<Icon icon={themeMode} color={themeColor} class="w-16 md:w-24 h-16 md:h-24" />
+					<Icon icon={themeMode} color={themeColor} class="h-16 w-16 md:h-24 md:w-24" />
 				</div>
-				<div><Icon icon="noto:evergreen-tree" class="w-48 md:w-96 h-48 md:h-96" /></div>
+				<div><Icon icon="noto:evergreen-tree" class="h-48 w-48 md:h-96 md:w-96" /></div>
 			</div>
 		</div>
 	{/if}
 	{#each posts as post, i}
 		<div>
-			<span class="badge-icon p-3 shadow-md bg-surface-200 dark:bg-surface-800 text-base">
+			<span class="badge-icon bg-surface-200 dark:bg-surface-800 p-3 text-base shadow-md">
 				{i + 1}
 			</span>
 			<span class="flex-auto">
@@ -44,7 +44,7 @@
 					</a>
 				</dt>
 				<dd
-					class="text-[0.6rem] opacity-60 dark:text-accent-300 text-accent-600 flex flex-row gap-1 items-center"
+					class="dark:text-accent-300 text-accent-600 flex flex-row items-center gap-1 text-[0.6rem] opacity-60"
 				>
 					<Icon icon="grommet-icons:calendar" inline={true} />
 					<span class="mx-1">{post.date}</span>

@@ -3,7 +3,7 @@
 </script>
 
 <b
-	class="underline underline-offset-4 decoration-pink-600 dark:decoration-pink-300 decoration-wavy decoration-2"
+	class="underline decoration-pink-600 decoration-wavy decoration-2 underline-offset-4 dark:decoration-pink-300"
 >
 	{@render children()}
 </b>

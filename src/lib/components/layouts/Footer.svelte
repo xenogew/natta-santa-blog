@@ -2,6 +2,6 @@
 	import BuyMeCoffee from '$lib/components/BuyMeCoffee.svelte';
 </script>
 
-<footer class="z-100 w-full flex flex-col bg-surface-300 dark:bg-surface-800 space-y-4 p-4">
+<footer class="bg-surface-300 dark:bg-surface-800 z-100 flex w-full flex-col space-y-4 p-4">
 	<BuyMeCoffee bmcId="xenogew" bmcText="Buy me a coffee" />
 </footer>

@@ -23,7 +23,7 @@
 {#if pub || displayPrivate}
 	<li class="mb-6 ml-6">
 		<span
-			class="absolute flex items-center justify-center w-8 h-8 bg-secondary-100 rounded-full -left-4 ring-8 ring-slate-100 dark:ring-gray-900 dark:bg-secondary-900"
+			class="bg-secondary-100 dark:bg-secondary-900 absolute -left-4 flex h-8 w-8 items-center justify-center rounded-full ring-8 ring-slate-100 dark:ring-gray-900"
 		>
 			{#if !icon}
 				<Icon icon="mingcute:calendar-line" width={timelineIconWidth} height={timelineIconHeight} />
@@ -31,19 +31,19 @@
 				<Icon {icon} width={timelineIconWidth} height={timelineIconHeight} />
 			{/if}
 		</span>
-		<h1 class="flex items-center mb-2 text-lg font-semibold text-primary-700 dark:text-primary-200">
+		<h1 class="text-primary-700 dark:text-primary-200 mb-2 flex items-center text-lg font-semibold">
 			{title}
 			{#if badgeText}
 				<span
-					class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3"
+					class="mr-2 ml-3 rounded bg-blue-100 px-2.5 py-0.5 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300"
 					>{badgeText.toUpperCase()}</span
 				>
 			{/if}
 		</h1>
-		<time class="block mb-2 text-sm font-normal leading-none text-surface-400 dark:text-surface-500"
+		<time class="text-surface-400 dark:text-surface-500 mb-2 block text-sm leading-none font-normal"
 			>on {timestamp}</time
 		>
-		<p class="mb-4 text-base font-normal text-secondary-500 dark:text-secondary-400">
+		<p class="text-secondary-500 dark:text-secondary-400 mb-4 text-base font-normal">
 			{@html description}
 		</p>
 	</li>

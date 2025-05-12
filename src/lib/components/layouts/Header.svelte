@@ -9,7 +9,7 @@
 <!-- App Bar -->
 <AppBar background="bg-surface-50 dark:bg-surface-700">
 	{#snippet lead()}
-		<div class="text-xl uppercase flex items-center justify-center">
+		<div class="flex items-center justify-center text-xl uppercase">
 			<a href="{base}/" class="flex items-center">
 				{#if page.url.pathname !== '/about'}
 					<span class="mr-4">
@@ -20,14 +20,14 @@
 						<Icon icon="twemoji:christmas-tree" inline={true} width="48" height="48" />
 					</span>
 				{/if}
-				<span class="content-center m-auto hidden md:inline-flex font-mono text-2xl capitalize">
+				<span class="m-auto hidden content-center font-mono text-2xl capitalize md:inline-flex">
 					Natta::Santa
 				</span>
 			</a>
 		</div>
 	{/snippet}
 	<!-- All menu links -->
-	<div class="flex flex-row place-content-center h-16">
+	<div class="flex h-16 flex-row place-content-center">
 		<div class="flex items-center justify-center">
 			<a class="btn-top-menu" data-sveltekit-preload-data="tap" href="{base}/blog" rel="noreferrer"
 				>.blog()</a
@@ -44,15 +44,9 @@
 	{/snippet}
 </AppBar>
 
-<style lang="postcss">
+<style>
+	@reference "../../../app.css";
 	.btn-top-menu {
-		@apply btn btn-md
-		font-mono
-		hover:underline
-		underline-offset-8
-		decoration-primary-900
-		dark:decoration-primary-200
-		rounded-sm
-		hover:preset-tonal-secondary;
+		@apply btn btn-base decoration-primary-900 dark:decoration-primary-200 hover:preset-tonal-secondary rounded-sm font-mono underline-offset-8 hover:underline;
 	}
 </style>

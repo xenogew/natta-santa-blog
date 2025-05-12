@@ -17,10 +17,10 @@
 </svelte:head>
 
 <section
-	class="max-w-4xl p-6 mx-auto my-4 bg-sky-100 sm:rounded-md shadow-md dark:bg-sky-700 relative"
+	class="relative mx-auto my-4 max-w-4xl bg-sky-100 p-6 shadow-md sm:rounded-md dark:bg-sky-700"
 >
-	<div class="flex flex-row gap-3 justify-items-center">
-		<div class="basis-1/5 grow-0">
+	<div class="flex flex-row justify-items-center gap-3">
+		<div class="grow-0 basis-1/5">
 			<Avatar
 				name="Santa"
 				src="santa-avatar.svg"
@@ -29,12 +29,12 @@
 			/>
 		</div>
 		<div class="basis-4/5">
-			<h2 class="h2 font-mono mb-4">Hello, I'm Natta</h2>
-			<p class="lg:indent-8 indent-0">
+			<h2 class="h2 mb-4 font-mono">Hello, I'm Natta</h2>
+			<p class="indent-0 lg:indent-8">
 				I'm a Java Back-End developer, experience in
 				<KeywordHighlight>Spring Boot</KeywordHighlight>, design & develop Restful API.
 			</p>
-			<p class="lg:indent-8 indent-0">
+			<p class="indent-0 lg:indent-8">
 				Develop this site with inspiration to learn develop Front-End with
 				<KeywordHighlight>Svelte-Kit</KeywordHighlight>.
 			</p>
@@ -42,9 +42,9 @@
 	</div>
 </section>
 <section
-	class="max-w-4xl p-6 mx-auto mb-4 bg-slate-100 sm:rounded-md shadow-md dark:bg-gray-900 relative"
+	class="relative mx-auto mb-4 max-w-4xl bg-slate-100 p-6 shadow-md sm:rounded-md dark:bg-gray-900"
 >
-	<h1 class="h1 font-sans mb-8">Bio Timeline</h1>
+	<h1 class="h1 mb-8 font-sans">Bio Timeline</h1>
 
 	<Timeline {timelines} displayPrivate={displayBio} />
 </section>

@@ -9,7 +9,7 @@
 	let { timelines, displayPrivate }: Props = $props();
 </script>
 
-<ol class="relative border-l border-gray-200 dark:border-gray-700 mx-6">
+<ol class="relative mx-6 border-l border-gray-200 dark:border-gray-700">
 	{#each timelines as timeline}
 		<TimelineItem {...timeline} {displayPrivate} />
 	{/each}

@@ -1,20 +1,33 @@
+import tailwindcss from '@tailwindcss/vite';
+import { svelteTesting } from '@testing-library/svelte/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
-import type { UserConfig } from 'vite';
-import { purgeCss } from 'vite-plugin-tailwind-purgecss';
+import { defineConfig } from 'vite';
 
-const config: UserConfig = {
-	plugins: [
-		sveltekit(),
-		purgeCss({
-			safelist: {
-				// any selectors that begin with "hljs-" will not be purged
-				greedy: [/^hljs-/]
-			}
-		})
-	],
+export default defineConfig({
+	plugins: [tailwindcss(), sveltekit()],
 	test: {
-		include: ['src/**/*.{test,spec}.{js,ts}']
+		workspace: [
+			{
+				extends: './vite.config.ts',
+				plugins: [svelteTesting()],
+				test: {
+					name: 'client',
+					environment: 'jsdom',
+					clearMocks: true,
+					include: ['src/**/*.svelte.{test,spec}.{js,ts}'],
+					exclude: ['src/lib/server/**'],
+					setupFiles: ['./vitest-setup-client.ts']
+				}
+			},
+			{
+				extends: './vite.config.ts',
+				test: {
+					name: 'server',
+					environment: 'node',
+					include: ['src/**/*.{test,spec}.{js,ts}'],
+					exclude: ['src/**/*.svelte.{test,spec}.{js,ts}']
+				}
+			}
+		]
 	}
-};
-
-export default config;
+});
