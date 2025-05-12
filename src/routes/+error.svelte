@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import Icon from '@iconify/svelte';
-	
 </script>
 
 <section class="bg-surface-300 dark:bg-surface-700 my-6 rounded-md">

@@ -4,26 +4,26 @@
 </script>
 
 <div class="container h-full items-center justify-center py-8">
-	<div class="flex space-x-10 text-center">
+	<div class="grid auto-rows-fr grid-cols-2 gap-10 text-center">
 		<a
 			href="#"
-			class="card preset-filled-surface-100-900 border-surface-200-800 card-hover divide-surface-200-800 block max-w-md divide-y overflow-hidden border-[1px]"
+			class="card preset-filled-surface-100-900 border-surface-200-800 card-hover divide-surface-200-800 flex flex-col divide-y overflow-hidden border-[1px]"
 		>
-			<header>
+			<header class="flex-none">
 				<img src={imgSrc} class="aspect-[21/9] w-full grayscale hue-rotate-90" alt="banner" />
 			</header>
-			<article class="space-y-4 p-4">
-				<div>
+			<article class="flex flex-auto flex-col p-4">
+				<div class="flex-none">
 					<h2 class="h6">Announcements</h2>
 					<h3 class="h3">Skeleton is Awesome</h3>
 				</div>
-				<p class="opacity-60">
+				<p class="flex-auto opacity-60">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aspernatur provident
 					eveniet eligendi cumque consequatur tempore sint nisi sapiente. Iste beatae laboriosam
 					iure molestias cum expedita architecto itaque quae rem.
 				</p>
 			</article>
-			<footer class="flex items-center justify-between gap-4 p-4">
+			<footer class="flex flex-none items-center justify-between gap-4 p-4">
 				<small class="opacity-60">By Alex</small>
 				<small class="opacity-60">On {new Date().toLocaleDateString()}</small>
 			</footer>
@@ -31,22 +31,22 @@
 
 		<a
 			href="#"
-			class="card preset-filled-surface-100-900 border-surface-200-800 card-hover divide-surface-200-800 block max-w-md divide-y overflow-hidden border-[1px]"
+			class="card preset-filled-surface-100-900 border-surface-200-800 card-hover divide-surface-200-800 flex flex-col divide-y overflow-hidden border-[1px]"
 		>
-			<header>
+			<header class="flex-none">
 				<img src={imgSrc} class="aspect-[21/9] w-full grayscale hue-rotate-90" alt="banner" />
 			</header>
-			<article class="space-y-4 p-4">
-				<div>
+			<article class="flex flex-auto flex-col p-4">
+				<div class="flex-none">
 					<h2 class="h6">Announcements</h2>
 					<h3 class="h3">Skeleton is Awesome</h3>
 				</div>
-				<p class="opacity-60">
+				<p class="flex-auto opacity-60">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aspernatur provident
 					eveniet eligendi cumque consequatur tempore sint nisi sapiente. Iste beatae
 				</p>
 			</article>
-			<footer class="flex items-center justify-between gap-4 p-4">
+			<footer class="flex flex-none items-center justify-between gap-4 p-4">
 				<small class="opacity-60">By Alex</small>
 				<small class="opacity-60">On {new Date().toLocaleDateString()}</small>
 			</footer>

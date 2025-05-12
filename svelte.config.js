@@ -29,14 +29,14 @@ const mdsvexOptions = {
 			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: 'poimandres' }));
 			return `{@html \`${html}\`}`;
 		}
-	},
+	}
 };
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	alias: {
 		$components: 'src/lib/components',
-		$src: 'src',
+		$src: 'src'
 	},
 	preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
 	kit: { adapter: adapter() },
