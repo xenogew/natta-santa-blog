@@ -19,7 +19,7 @@
 	<Header />
 
 	<!-- Page Route Content -->
-	<main class="bg-surface-200 dark:bg-surface-900 overflow-y-auto">
+	<main class="bg-surface-50 dark:bg-surface-900 overflow-y-auto">
 		<div class="container mx-auto">
 			{#key data.currentRoute}
 				<main class="mx-6" in:fade={{ duration: 150, delay: 150 }} out:fade={{ duration: 150 }}>

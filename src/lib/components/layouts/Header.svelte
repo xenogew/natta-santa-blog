@@ -7,7 +7,7 @@
 </script>
 
 <!-- App Bar -->
-<AppBar background="bg-surface-50 dark:bg-surface-700">
+<AppBar background="bg-surface-200 dark:bg-surface-700">
 	{#snippet lead()}
 		<div class="flex items-center justify-center text-xl uppercase">
 			<a href="{base}/" class="flex items-center">
