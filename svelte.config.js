@@ -1,5 +1,5 @@
 import adapter from '@sveltejs/adapter-vercel';
-import { sveltePreprocess } from 'svelte-preprocess';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex, escapeSvelte } from 'mdsvex';
 import { createHighlighter } from 'shiki';
 import slug from 'rehype-slug';
@@ -34,24 +34,13 @@ const mdsvexOptions = {
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	kit: {
-		adapter: adapter(),
-		paths: {
-			base: ''
-		}
+	alias: {
+		$components: 'src/lib/components',
+		$src: 'src',
 	},
-	extensions: ['.svelte', '.md'],
-	preprocess: [
-		mdsvex(mdsvexOptions),
-		sveltePreprocess({
-			postcss: true
-		})
-	],
-	vitePlugin: {
-		inspector: {
-			holdMode: true
-		}
-	}
+	preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
+	kit: { adapter: adapter() },
+	extensions: ['.svelte', '.md', '.svx']
 };
 
 export default config;
