@@ -12,7 +12,8 @@
 
 <Switch
 	name="mode"
-	controlActive="bg-surface-200"
+	controlActive="bg-surface-400"
+	controlInactive="bg-surface-900"
 	checked={mode}
 	onCheckedChange={(e) => {
 		switchMode(e.checked);
