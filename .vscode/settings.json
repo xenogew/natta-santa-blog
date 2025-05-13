@@ -6,7 +6,6 @@
 	"explorer.sortOrder": "filesFirst",
 	"explorer.compactFolders": false,
 	"circleci.persistedProjectSelection": [],
-	"terminal.integrated.defaultProfile.linux": "fish",
 	"css.customData": [".vscode/tailwind.json"],
 	"css.lint.unknownAtRules": "ignore",
 	"editor.wordWrap": "on"
