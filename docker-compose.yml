@@ -1,0 +1,18 @@
+services:
+  svelte_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000"
+    environment:
+      NODE_ENV: production
+
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - svelte_app
