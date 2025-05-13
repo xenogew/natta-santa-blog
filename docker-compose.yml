@@ -8,6 +8,9 @@ services:
     environment:
       NODE_ENV: production
     user: '1000:1000'
+    restart: unless-stopped
+    networks:
+      - natta_santa_net
 
   nginx:
     build:
@@ -18,3 +21,10 @@ services:
     depends_on:
       - blog_app
     user: '1000:1000'
+    restart: unless-stopped
+    networks:
+      - natta_santa_net
+
+networks:
+  natta_santa_net:
+    driver: bridge

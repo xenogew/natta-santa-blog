@@ -56,18 +56,6 @@
 
 <style>
 	@reference "../app.css";
-	figure {
-		@apply relative flex flex-col;
-	}
-	figure svg,
-	.img-bg {
-		@apply h-64 w-64 md:h-80 md:w-80;
-	}
-	.img-bg {
-		@apply from-primary-300 to-warning-300 bg-gradient-to-r;
-		@apply absolute z-[-1] rounded-full blur-[64px];
-		animation: pulse 5s cubic-bezier(0, 0, 0, 0.5) infinite;
-	}
 	@keyframes pulse {
 		50% {
 			transform: scale(1.5);
