@@ -13,7 +13,7 @@ export const fetchMarkdownPost = async () => {
 		if (file && typeof file === 'object' && 'metadata' in file && mdName) {
 			const metadata = file.metadata as Omit<MarkdownPost, 'slug'>;
 			const post = { ...metadata, slug: mdName } satisfies MarkdownPost;
-			post.published && allPosts.push(post);
+			if (post.published) allPosts.push(post);
 		}
 	}
 
