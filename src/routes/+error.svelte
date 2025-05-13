@@ -9,7 +9,7 @@
 	<div class="mx-auto max-w-screen-xl px-0 py-8 md:px-4 lg:px-6 lg:py-16">
 		<div class="mx-auto text-center md:max-w-screen-sm">
 			<div class="my-auto flex flex-row justify-center">
-				<div class="bg-surface-50 size-24 rounded-full md:size-180">
+				<div class="bg-surface-50 size-24 rounded-full md:size-124">
 					<Icon icon="noto-v1:crying-cat" class="size-full" />
 				</div>
 			</div>
