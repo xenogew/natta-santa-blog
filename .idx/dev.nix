@@ -59,14 +59,14 @@
       # Runs when a workspace is first created
       onCreate = {
         # install JS dependencies from NPM
-        bun-install = "pnpm install";
+        pnpm-install = "pnpm install";
         default.openFiles = [ "README.md" ];
       };
       # Runs when the workspace is (re)started
       onStart = {
         # Example: start a background task to watch and re-build backend code
         # watch-backend = "npm run watch-backend";
-        bun-run-dev = "pnpm run dev";
+        # run-dev = "pnpm run dev";
       };
     };
   };
