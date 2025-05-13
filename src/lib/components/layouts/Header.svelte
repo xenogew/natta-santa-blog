@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { AppBar } from '@skeletonlabs/skeleton-svelte';
-	import Icon from '@iconify/svelte';
 	import { base } from '$app/paths';
+	import Icon from '@iconify/svelte';
 	import ThemeSwitch from '$lib/components/ThemeSwitch.svelte';
 </script>
 
@@ -12,22 +12,36 @@
 		<div class="flex items-center justify-center text-xl uppercase">
 			<a href="{base}/" class="flex items-center">
 				{#if page.url.pathname !== '/about'}
-					<span class="mr-4">
-						<Icon icon="emojione-v1:santa-claus" inline={true} width="48" height="48" />
+					<span>
+						<Icon
+							icon="emojione-v1:santa-claus"
+							inline={true}
+							class="scale-75 md:scale-none"
+							width="48"
+							height="48"
+						/>
 					</span>
 				{:else}
-					<span class="mr-4">
-						<Icon icon="twemoji:christmas-tree" inline={true} width="48" height="48" />
+					<span>
+						<Icon
+							icon="twemoji:christmas-tree"
+							inline={true}
+							class="scale-75 md:scale-none"
+							width="48"
+							height="48"
+						/>
 					</span>
 				{/if}
-				<span class="m-auto hidden content-center font-mono text-2xl capitalize md:inline-flex">
+				<span
+					class="m-auto hidden content-center font-mono text-2xl capitalize md:ml-4 md:inline-flex"
+				>
 					Natta::Santa
 				</span>
 			</a>
 		</div>
 	{/snippet}
 	<!-- All menu links -->
-	<div class="flex h-16 flex-row place-content-center">
+	<div class="flex h-16 flex-col place-content-center md:flex-row">
 		<div class="flex items-center justify-center">
 			<a class="btn-top-menu" data-sveltekit-preload-data="tap" href="{base}/blog" rel="noreferrer"
 				>.blog()</a

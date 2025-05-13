@@ -18,6 +18,7 @@
 	onCheckedChange={(e) => {
 		switchMode(e.checked);
 	}}
+	classes="invisible md:visible"
 >
 	{#snippet inactiveChild()}<Icon icon="lucide:moon" width="14" height="14" />{/snippet}
 	{#snippet activeChild()}<Icon icon="lucide:sun" width="14" height="14" />{/snippet}

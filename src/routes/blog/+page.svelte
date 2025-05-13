@@ -26,15 +26,15 @@
 			<h1 class="md:h2 my-4 break-all">There's no published posts right now...</h1>
 			<div class="flex flex-col items-stretch">
 				<div class="self-start">
-					<Icon icon={themeMode} color={themeColor} class="h-16 w-16 md:h-24 md:w-24" />
+					<Icon icon={themeMode} color={themeColor} class="size-16 md:size-24" />
 				</div>
-				<div><Icon icon="noto:evergreen-tree" class="h-48 w-48 md:h-96 md:w-96" /></div>
+				<div><Icon icon="noto:evergreen-tree" class="size-48 md:size-96" /></div>
 			</div>
 		</div>
 	{/if}
 	{#each posts as post, i}
 		<div>
-			<span class="badge-icon bg-surface-200 dark:bg-surface-800 p-3 text-base shadow-md">
+			<span class="badge-icon bg-surface-500 dark:bg-surface-800 p-3 text-base shadow-md">
 				{i + 1}
 			</span>
 			<span class="flex-auto">
