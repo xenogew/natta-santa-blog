@@ -1,5 +1,5 @@
 services:
-  svelte_app:
+  blog_app:
     build:
       context: .
       dockerfile: blog.Dockerfile
@@ -16,5 +16,5 @@ services:
     ports:
       - '80:80'
     depends_on:
-      - svelte_app
+      - blog_app
     user: '1000:1000'

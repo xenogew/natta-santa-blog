@@ -24,9 +24,6 @@ FROM docker.io/node:jod-alpine AS production
 # Install pnpm
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
-# Create non-root user with explicit UID/GID for better Podman compatibility
-RUN addgroup -g 1000 appgroup && adduser -u 1000 -G appgroup -s /bin/sh -D appuser
-
 WORKDIR /app
 
 # Copy only necessary files from builder
@@ -38,7 +35,7 @@ COPY --from=builder /app/build ./build
 RUN pnpm install --prod --frozen-lockfile
 
 # Set ownership to non-root user
-RUN chown -R appuser:appgroup /app
+RUN chown -R 1000:1000 /app
 
 # Switch to non-root user
 USER 1000:1000
