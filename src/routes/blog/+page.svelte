@@ -38,7 +38,7 @@
 	{/if}
 	{#each posts as post, i}
 		<div>
-			<span class="badge-icon bg-surface-500 dark:bg-surface-800 p-3 text-base shadow-md">
+			<span class="badge-icon bg-surface-500 dark:bg-slate-800 p-3 text-base shadow-md dark:shadow-none font-extrabold">
 				{i + 1}
 			</span>
 			<span class="flex-auto">

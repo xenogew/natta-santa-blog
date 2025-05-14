@@ -14,6 +14,10 @@
 	let { data, children }: Props = $props();
 </script>
 
+<svelte:head>
+	<title>Natta Santa: A poor Dev Blog but trying to do better</title>
+</svelte:head>
+
 <!-- Main Layout -->
 <div class="variant-soft-surface grid h-screen grid-rows-[auto_1fr_auto] overflow-y-auto">
 	<Header />
