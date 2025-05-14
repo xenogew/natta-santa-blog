@@ -6,10 +6,11 @@ import { defineConfig, searchForWorkspaceRoot } from 'vite';
 export default defineConfig({
 	plugins: [tailwindcss(), sveltekit()],
 	server: {
+		host: "0.0.0.0",
 		fs: {
 			allow: [
 				searchForWorkspaceRoot(process.cwd()),
-				'.well-known/appspecific/com.chrome.devtools.json'
+				'static/.well-known/appspecific/com.chrome.devtools.json'
 			]
 		}
 	},
