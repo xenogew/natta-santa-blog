@@ -39,13 +39,13 @@
 
     # Enable previews
     previews = {
-      enable = true;
+      enable = false;
       previews = {
         web = {
           # Example: run "npm run dev" with PORT set to IDX's defined port for previews,
           # and show it in IDX's web preview panel
-          command = ["pnpm" "run" "dev"];
-          manager = "web";
+          # command = ["pnpm" "run" "dev"];
+          # manager = "web";
           env = {
             # Environment variables to set for your server
             PORT = "$PORT";
