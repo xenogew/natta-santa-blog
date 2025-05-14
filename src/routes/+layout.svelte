@@ -19,19 +19,20 @@
 </svelte:head>
 
 <!-- Main Layout -->
-<section class="variant-soft-surface grid h-screen grid-rows-[auto_1fr_auto] overflow-y-auto">
+<section class="variant-soft-surface grid h-screen grid-rows-[auto_1fr] overflow-y-auto">
 	<Header />
 
 	<!-- Page Route Content -->
-	<main class="bg-surface-50 dark:bg-surface-800 overflow-y-auto">
-		<div class="container mx-auto">
-			{#key data.currentRoute}
-				<main class="mx-6" in:fade={{ duration: 150, delay: 150 }} out:fade={{ duration: 150 }}>
-					{@render children()}
-				</main>
-			{/key}
-		</div>
-	</main>
-
-	<Footer />
+	<div class="bg-surface-50 dark:bg-surface-800 h-full overflow-y-auto">
+		<main class="flex min-h-full flex-col">
+			<div class="container mx-auto flex-1">
+				{#key data.currentRoute}
+					<main class="mx-6" in:fade={{ duration: 150, delay: 150 }} out:fade={{ duration: 150 }}>
+						{@render children()}
+					</main>
+				{/key}
+			</div>
+			<Footer />
+		</main>
+	</div>
 </section>

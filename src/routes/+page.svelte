@@ -1,56 +1,42 @@
 <script lang="ts">
+	import ArticleCard from '$lib/components/ArticleCard.svelte';
+
 	const imgSrc =
 		'https://images.unsplash.com/photo-1463171515643-952cee54d42a?q=80&w=450&h=190&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+
+	const articles = [
+		{
+			title: 'Skeleton is Awesome',
+			subtitle: 'Announcements',
+			content:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aspernatur provident eveniet eligendi cumque consequatur tempore sint nisi sapiente. Iste beatae laboriosam iure molestias cum expedita architecto itaque quae rem.',
+			author: 'Alex',
+			imageSrc: imgSrc
+		},
+		{
+			title: 'Skeleton is Awesome',
+			subtitle: 'Announcements',
+			content:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aspernatur provident eveniet eligendi cumque consequatur tempore sint nisi sapiente. Iste beatae',
+			author: 'Alex',
+			imageSrc: imgSrc
+		},
+		{
+			title: 'Skeleton is Awesome',
+			subtitle: 'Announcements',
+			content:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aspernatur provident eveniet eligendi cumque consequatur tempore sint nisi sapiente. Iste beatae',
+			author: 'Alex',
+			imageSrc: imgSrc
+		}
+	];
 </script>
 
 <div class="container h-full items-center justify-center py-8">
-	<div class="grid auto-rows-fr grid-cols-2 gap-10 text-center">
-		<a
-			href="#"
-			class="card preset-filled-surface-100-900 border-surface-200-800 card-hover divide-surface-200-800 flex flex-col divide-y overflow-hidden border-[1px]"
-		>
-			<header class="flex-none">
-				<img src={imgSrc} class="aspect-[21/9] w-full grayscale hue-rotate-90" alt="banner" />
-			</header>
-			<article class="flex flex-auto flex-col p-4">
-				<div class="flex-none">
-					<h2 class="h6">Announcements</h2>
-					<h3 class="h3">Skeleton is Awesome</h3>
-				</div>
-				<p class="flex-auto opacity-60">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aspernatur provident
-					eveniet eligendi cumque consequatur tempore sint nisi sapiente. Iste beatae laboriosam
-					iure molestias cum expedita architecto itaque quae rem.
-				</p>
-			</article>
-			<footer class="flex flex-none items-center justify-between gap-4 p-4">
-				<small class="opacity-60">By Alex</small>
-				<small class="opacity-60">On {new Date().toLocaleDateString()}</small>
-			</footer>
-		</a>
-
-		<a
-			href="#"
-			class="card preset-filled-surface-100-900 border-surface-200-800 card-hover divide-surface-200-800 flex flex-col divide-y overflow-hidden border-[1px]"
-		>
-			<header class="flex-none">
-				<img src={imgSrc} class="aspect-[21/9] w-full grayscale hue-rotate-90" alt="banner" />
-			</header>
-			<article class="flex flex-auto flex-col p-4">
-				<div class="flex-none">
-					<h2 class="h6">Announcements</h2>
-					<h3 class="h3">Skeleton is Awesome</h3>
-				</div>
-				<p class="flex-auto opacity-60">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aspernatur provident
-					eveniet eligendi cumque consequatur tempore sint nisi sapiente. Iste beatae
-				</p>
-			</article>
-			<footer class="flex flex-none items-center justify-between gap-4 p-4">
-				<small class="opacity-60">By Alex</small>
-				<small class="opacity-60">On {new Date().toLocaleDateString()}</small>
-			</footer>
-		</a>
+	<div class="grid auto-rows-fr grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-10 text-center">
+		{#each articles as article}
+			<ArticleCard {...article} />
+		{/each}
 	</div>
 </div>
 
