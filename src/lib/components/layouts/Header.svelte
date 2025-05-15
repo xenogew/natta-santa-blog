@@ -4,6 +4,8 @@
 	import { base } from '$app/paths';
 	import Icon from '@iconify/svelte';
 	import ThemeSwitch from '$lib/components/ThemeSwitch.svelte';
+
+	let searchQuery = '';
 </script>
 
 <!-- App Bar -->
@@ -32,16 +34,30 @@
 						/>
 					</span>
 				{/if}
-				<span
-					class="m-auto content-center font-mono text-2xl capitalize ml-4"
-				>
-					Natta::Santa
-				</span>
+				<span class="m-auto ml-4 content-center font-mono text-2xl capitalize"> Natta::Santa </span>
 			</a>
 		</div>
 	{/snippet}
 
 	{#snippet trail()}
-		<ThemeSwitch />
+		<div class="flex items-center gap-4">
+			<div class="hidden sm:block">
+				<input
+					type="search"
+					placeholder="Search..."
+					autocomplete="off"
+					bind:value={searchQuery}
+					class="dark:bg-surface-800 dark:placeholder-slate-100 border-surface-500 dark:border-surface-900 max-w-[200px] rounded-md border-2 bg-slate-200 focus:border-transparent focus:ring-1 focus:ring-zinc-900 focus:outline-2"
+				/>
+			</div>
+			<ThemeSwitch />
+		</div>
 	{/snippet}
 </AppBar>
+
+<style>
+	@reference "../../../app.css";
+	input[type='search']::-webkit-search-cancel-button {
+		@apply appearance-none;
+	}
+</style>
