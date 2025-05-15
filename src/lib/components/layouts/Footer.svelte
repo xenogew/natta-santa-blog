@@ -3,7 +3,7 @@
 	import { base } from '$app/paths';
 </script>
 
-<footer class="bg-stone-300 dark:bg-stone-900 z-100 flex w-full flex-col space-y-4 p-4">
+<footer class="bg-stone-300 dark:bg-stone-900 z-100 flex w-full flex-col space-y-4 px-4 md:px-24 py-4">
 	<div class="flex flex-col-reverse justify-between gap-8 md:flex-row">
 		<!-- Left section - Buy Me Coffee -->
 		<div class="flex flex-col items-center md:items-start">
