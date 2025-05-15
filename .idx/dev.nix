@@ -12,6 +12,7 @@
     pkgs.mkcert
     pkgs.pnpm
     pkgs.fish
+    pkgs.firebase-tools
   ];
 
   # Sets environment variables in the workspace
