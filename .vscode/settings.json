@@ -8,5 +8,40 @@
 	"circleci.persistedProjectSelection": [],
 	"css.customData": [".vscode/tailwind.json"],
 	"css.lint.unknownAtRules": "ignore",
-	"editor.wordWrap": "on"
+	"editor.wordWrap": "on",
+	"terminal.integrated.profiles.linux": {
+		"bash": {
+			"path": "bash",
+			"icon": "terminal-bash"
+		},
+		"zsh": {
+			"path": "zsh"
+		},
+		"fish": {
+			"path": "fish"
+		},
+		"tmux": null,
+		"pwsh": {
+			"path": "pwsh",
+			"icon": "terminal-powershell"
+		}
+	},
+	"terminal.integrated.defaultProfile.windows": "PS Core",
+  "terminal.integrated.profiles.windows": {
+    "Command Prompt": {
+      "args": [],
+      "icon": "terminal-cmd",
+      "path": ["${env:windir}\\Sysnative\\cmd.exe", "${env:windir}\\System32\\cmd.exe"]
+    },
+    "Git Bash": null,
+    "JavaScript Debug Terminal": null,
+    "PowerShell": {
+      "icon": "terminal-powershell",
+      "source": "PowerShell"
+    },
+    "PS Core": {
+      "icon": "terminal-powershell",
+      "path": "${env:powershell-core}\\pwsh.exe"
+    }
+  }
 }
