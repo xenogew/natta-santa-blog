@@ -33,7 +33,7 @@
 </script>
 
 <div class="container h-full items-center justify-center py-8">
-	<div class="grid auto-rows-fr grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-10 text-center">
+	<div class="grid auto-rows-fr grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 text-center">
 		{#each articles as article}
 			<ArticleCard {...article} />
 		{/each}
@@ -41,7 +41,6 @@
 </div>
 
 <style>
-	@reference "../app.css";
 	@keyframes pulse {
 		50% {
 			transform: scale(1.5);
