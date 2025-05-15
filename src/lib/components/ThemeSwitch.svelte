@@ -13,13 +13,14 @@
 <Switch
 	name="mode"
 	controlActive="bg-surface-400"
-	controlInactive="bg-surface-900"
+	controlInactive="bg-slate-800"
+	compact
 	checked={mode}
 	onCheckedChange={(e) => {
 		switchMode(e.checked);
 	}}
 	classes="invisible md:visible"
 >
-	{#snippet inactiveChild()}<Icon icon="lucide:moon" width="14" height="14" />{/snippet}
-	{#snippet activeChild()}<Icon icon="lucide:sun" width="14" height="14" />{/snippet}
+	{#snippet inactiveChild()}<Icon icon="lucide:moon" width="24" height="24" />{/snippet}
+	{#snippet activeChild()}<Icon icon="lucide:sun" width="24" height="24" />{/snippet}
 </Switch>
