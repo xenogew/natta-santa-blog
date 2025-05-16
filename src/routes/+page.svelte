@@ -33,7 +33,9 @@
 </script>
 
 <div class="container h-full items-center justify-center py-8">
-	<div class="grid auto-rows-fr grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 text-center">
+	<div
+		class="grid auto-rows-fr grid-cols-1 gap-4 text-center md:grid-cols-2 md:gap-6 lg:grid-cols-3"
+	>
 		{#each articles as article}
 			<ArticleCard {...article} />
 		{/each}

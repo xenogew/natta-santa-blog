@@ -47,7 +47,7 @@
 					placeholder="Search..."
 					autocomplete="off"
 					bind:value={searchQuery}
-					class="dark:bg-surface-800 dark:placeholder-slate-100 border-surface-500 dark:border-surface-900 max-w-[200px] rounded-md border-2 bg-slate-200 focus:border-transparent focus:ring-1 focus:ring-zinc-900 focus:outline-2"
+					class="dark:bg-surface-800 border-surface-500 dark:border-surface-900 max-w-[200px] rounded-md border-2 bg-slate-200 focus:border-transparent focus:ring-1 focus:ring-zinc-900 focus:outline-2 dark:placeholder-slate-100"
 				/>
 			</div>
 			<ThemeSwitch />

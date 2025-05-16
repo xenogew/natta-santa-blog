@@ -3,17 +3,19 @@
 	import { base } from '$app/paths';
 </script>
 
-<footer class="bg-stone-300 dark:bg-stone-900 z-100 flex w-full flex-col space-y-4 px-4 md:px-24 py-4">
+<footer
+	class="z-100 flex w-full flex-col space-y-4 bg-stone-300 px-4 py-4 md:px-24 dark:bg-stone-900"
+>
 	<div class="flex flex-col-reverse justify-between gap-8 md:flex-row">
 		<!-- Left section - Buy Me Coffee -->
 		<div class="flex flex-col items-center md:items-start">
-			<h3 class="font-extrabold text-xl mb-4">Support Me</h3>
+			<h3 class="mb-4 text-xl font-extrabold">Support Me</h3>
 			<BuyMeCoffee bmcId="xenogew" bmcText="Buy me a coffee" />
 		</div>
 
 		<!-- Right section - Navigation -->
 		<div class="flex flex-col items-center md:items-end">
-			<h3 class="font-extrabold text-xl mb-4">Navigation</h3>
+			<h3 class="mb-4 text-xl font-extrabold">Navigation</h3>
 			<nav>
 				<ul class="flex flex-col items-center gap-4 md:items-end">
 					<li>

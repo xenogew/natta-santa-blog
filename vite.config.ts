@@ -6,7 +6,7 @@ import { defineConfig, searchForWorkspaceRoot } from 'vite';
 export default defineConfig({
 	plugins: [tailwindcss(), sveltekit()],
 	server: {
-		host: "0.0.0.0",
+		host: '0.0.0.0',
 		fs: {
 			allow: [
 				searchForWorkspaceRoot(process.cwd()),

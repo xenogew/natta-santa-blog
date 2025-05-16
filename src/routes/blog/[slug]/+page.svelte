@@ -17,7 +17,7 @@
 </svelte:head>
 
 <section
-	class="bg-surface-100 dark:bg-slate-700 mx-auto my-6 max-w-4xl p-6 shadow-md sm:rounded-md"
+	class="bg-surface-100 mx-auto my-6 max-w-4xl p-6 shadow-md sm:rounded-md dark:bg-slate-700"
 >
 	<article class="markdown">
 		<Content />
