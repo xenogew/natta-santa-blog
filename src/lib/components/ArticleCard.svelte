@@ -30,12 +30,12 @@
             <h2 class="h6">{subtitle}</h2>
             <h3 class="h3">{title}</h3>
         </div>
-        <p class="flex-auto opacity-60">
+        <p class="flex-auto opacity-75">
             {content}
         </p>
     </article>
     <footer class="flex flex-none items-center justify-between gap-4 p-4">
-        <small class="opacity-60">By {author}</small>
-        <small class="opacity-60">On {new Date().toLocaleDateString()}</small>
+        <small class="opacity-75">By {author}</small>
+        <small class="opacity-75">On {new Date().toLocaleDateString()}</small>
     </footer>
 </a>

@@ -20,7 +20,9 @@
 		switchMode(e.checked);
 	}}
 	classes="invisible md:visible"
+	labelClasses="hidden"
 >
 	{#snippet inactiveChild()}<Icon icon="lucide:moon" width="24" height="24" />{/snippet}
 	{#snippet activeChild()}<Icon icon="lucide:sun" width="24" height="24" />{/snippet}
+	light-dark switch
 </Switch>
