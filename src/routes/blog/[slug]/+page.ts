@@ -4,7 +4,7 @@ import { error } from '@sveltejs/kit';
 
 export const load = (async ({ params }): Promise<BlogPost> => {
 	try {
-		const post = await import(`../${params.slug}.md`);
+		const post = await import(`../contents/${params.slug}.md`);
 		const { title, date, tags } = post.metadata;
 		const Content = post.default;
 
@@ -14,7 +14,7 @@ export const load = (async ({ params }): Promise<BlogPost> => {
 			date,
 			tags
 		};
-	} catch (e) {
+	} catch {
 		throw error(404, `Could not find blog post /blog/${params.slug}`);
 	}
 }) satisfies PageLoad;

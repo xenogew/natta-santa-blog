@@ -1,45 +1,27 @@
 <script lang="ts">
+	import type { PageData } from './$types';
 	import ArticleCard from '$lib/components/ArticleCard.svelte';
 
-	const imgSrc =
-		'https://images.unsplash.com/photo-1463171515643-952cee54d42a?q=80&w=450&h=190&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
-
-	const articles = [
-		{
-			title: 'Skeleton is Awesome',
-			subtitle: 'Announcements',
-			content:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aspernatur provident eveniet eligendi cumque consequatur tempore sint nisi sapiente. Iste beatae laboriosam iure molestias cum expedita architecto itaque quae rem.',
-			author: 'Alex',
-			imageSrc: imgSrc
-		},
-		{
-			title: 'Skeleton is Awesome',
-			subtitle: 'Announcements',
-			content:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aspernatur provident eveniet eligendi cumque consequatur tempore sint nisi sapiente. Iste beatae',
-			author: 'Alex',
-			imageSrc: imgSrc
-		},
-		{
-			title: 'Skeleton is Awesome',
-			subtitle: 'Announcements',
-			content:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aspernatur provident eveniet eligendi cumque consequatur tempore sint nisi sapiente. Iste beatae',
-			author: 'Alex',
-			imageSrc: imgSrc
-		}
-	];
+	type Props = {
+		data: PageData;
+	};
+	let { data }: Props = $props();
+	const { posts, total, hasMore } = data;
+	console.log('posts', posts, total, hasMore);
 </script>
 
 <div class="container h-full items-center justify-center py-8">
 	<div
 		class="grid auto-rows-fr grid-cols-1 gap-4 text-center md:grid-cols-2 md:gap-6 lg:grid-cols-3"
 	>
-		{#each articles as article}
+		{#each posts as article}
 			<ArticleCard {...article} />
 		{/each}
 	</div>
+
+	{#if hasMore}
+		<a href="/blog" class="btn preset-filled-primary mt-6">View More Posts</a>
+	{/if}
 </div>
 
 <style>

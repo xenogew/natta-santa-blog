@@ -1,7 +1,10 @@
-import type { MarkdownPost, BlogPostsResponse, PaginationParams } from '$lib/types';
+import type { MarkdownPost, BlogPostsResponse, PaginationParams, GlobFile } from '$lib/types';
+import { render } from 'svelte/server';
 
 export class MarkdownService {
 	private readonly PAGE_SIZE = 12;
+	private readonly IMAGE_REGEX = /!\[.*?\]\((.*?)\)|<img.*?src=["'](.*?)["']/;
+	private readonly SAMPLE_LENGTH = 600;
 
 	async getPaginatedPosts(
 		params?: Partial<PaginationParams>
@@ -25,12 +28,14 @@ export class MarkdownService {
 	}
 
 	private async fetchMarkdownPosts(): Promise<MarkdownPost[]> {
-		const allPostFiles = import.meta.glob('/src/routes/blog/contents/*.md', { eager: true });
+		const allPostFiles = import.meta.glob('/src/routes/blog/contents/*.md', {
+			eager: true
+		}) as Record<string, GlobFile>;
 		const posts: MarkdownPost[] = [];
 
 		for (const postFile in allPostFiles) {
 			const file = allPostFiles[postFile];
-			const post = this.processMarkdownFile(postFile, file as object);
+			const post = this.processMarkdownFile(postFile, file);
 			if (post?.published) {
 				posts.push(post);
 			}
@@ -39,7 +44,7 @@ export class MarkdownService {
 		return posts;
 	}
 
-	private processMarkdownFile(filePath: string, file: object): MarkdownPost | null {
+	private processMarkdownFile(filePath: string, file: GlobFile): MarkdownPost | null {
 		const slug = this.extractSlug(filePath);
 
 		if (!this.isValidMarkdownFile(file) || !slug) {
@@ -47,7 +52,15 @@ export class MarkdownService {
 		}
 
 		const metadata = file.metadata as Omit<MarkdownPost, 'slug'>;
-		return { ...metadata, slug };
+		const { body: content } = render(file.default) || '';
+		const cover = this.extractFirstImageUrl(content);
+		return { ...metadata, slug, cover, path: `/blog/${slug}` } as MarkdownPost;
+	}
+
+	private extractFirstImageUrl(content: string): string | undefined {
+		const match = this.IMAGE_REGEX.exec(content);
+		// Return the first captured group (markdown syntax) or second group (HTML syntax)
+		return match?.[1] || match?.[2];
 	}
 
 	private extractSlug(filePath: string): string | undefined {

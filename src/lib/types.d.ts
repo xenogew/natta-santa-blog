@@ -1,11 +1,33 @@
+export type GlobFile = {
+	metadata: object;
+	default: any;
+};
+
 export type MarkdownPost = {
 	slug: string;
 	title: string;
+	subtitle: string;
+	author: string;
+	sample: string;
 	date: Date;
 	tags: Array<string>;
 	published: boolean;
 	path?: string;
+	cover?: string;
 };
+
+export type BlogPostsResponse<T> = {
+	posts: T[];
+	total: number;
+	currentPage: number;
+	totalPages: number;
+	hasMore: boolean;
+};
+
+export interface PaginationParams {
+	page: number;
+	limit: number;
+}
 
 export type BlogPost = {
 	Content: any;
