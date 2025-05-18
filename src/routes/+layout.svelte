@@ -19,7 +19,7 @@
 </svelte:head>
 
 <!-- Main Layout -->
-<section class="variant-soft-surface grid h-screen grid-rows-[auto_1fr] overflow-y-auto">
+<section class="preset-soft-surface grid h-screen grid-rows-[auto_1fr] overflow-y-auto">
 	<Header />
 
 	<!-- Page Route Content -->

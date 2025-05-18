@@ -26,7 +26,7 @@
 			</p>
 			<a
 				href="/"
-				class="variant-ghost-secondary hover:variant-filled-secondary my-4 inline-flex rounded-lg px-5 py-2.5 text-center text-sm font-medium text-white focus:ring-4 focus:outline-none"
+				class="preset-ghost-secondary hover:preset-filled-secondary my-4 inline-flex rounded-lg px-5 py-2.5 text-center text-sm font-medium text-white focus:ring-4 focus:outline-none"
 				>Back to Homepage</a
 			>
 		</div>

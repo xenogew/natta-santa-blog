@@ -17,16 +17,16 @@
 </svelte:head>
 
 <section
-	class="bg-surface-100 mx-auto my-6 max-w-4xl p-6 shadow-md sm:rounded-md dark:bg-slate-700"
+	class="bg-surface-100 my-6 max-w-4xl p-6 shadow-md sm:rounded-md dark:bg-slate-700"
 >
 	<article class="markdown">
 		<Content />
 
 		<div class="my-4 py-2 text-sm">
 			Tags:
-			{#each tags as tag}
-				<a href="{base}/blog/tags/{tag}"
-					><span class="chip variant-soft-secondary hover:variant-glass-secondary m-0.5">{tag}</span
+			{#each tags as tag, key}
+				<a href="{base}/blog/tags/{tag}" aria-label="tag-{key}"
+					><span class="chip preset-outlined-secondary-500 hover:preset-glass-secondary m-0.5">{tag}</span
 					></a
 				>
 			{/each}
