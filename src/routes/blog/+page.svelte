@@ -17,7 +17,7 @@
 	});
 
 	const themeMode = $derived(
-		currentMode === 'light' ? 'line-md:sun-rising-twotone-loop' : 'line-md:moon-loop'
+		currentMode === 'dark' ? 'line-md:sun-rising-twotone-loop' : 'line-md:moon-loop'
 	);
 	const themeColor = $derived(currentMode === 'light' ? '#FF5F1F' : '#FFEF00');
 </script>
@@ -27,7 +27,7 @@
 <dl class="list-dl">
 	{#if posts && posts.length === 0}
 		<div class="flex flex-col">
-			<h1 class="md:h2 my-4 break-all">There's no published posts right now...</h1>
+			<h1 class="md:h2 my-4 break-all">There's no archived posts right now...</h1>
 			<div class="flex flex-col items-stretch">
 				<div class="self-start">
 					<Icon icon={themeMode} color={themeColor} class="size-16 md:size-24" />
