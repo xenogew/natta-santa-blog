@@ -6,7 +6,7 @@
 		data: PageData;
 	};
 	let { data }: Props = $props();
-	const { posts, total, hasMore } = data;
+	const { posts, hasMore } = data;
 </script>
 
 <div class="container h-full items-center justify-center py-8">
