@@ -6,6 +6,8 @@ import slug from 'rehype-slug';
 import autoLinkHeadings from 'rehype-autolink-headings';
 import remarkHeadingId from 'remark-heading-id';
 
+const langs = ['javascript', 'typescript', 'java', 'html', 'css', 'bash', 'json', 'yaml'];
+
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
 	extensions: ['.md'],
@@ -23,9 +25,9 @@ const mdsvexOptions = {
 		highlighter: async (code, lang = 'text') => {
 			const highlighter = await createHighlighter({
 				themes: ['poimandres'],
-				langs: ['javascript', 'typescript', 'java']
+				langs
 			});
-			await highlighter.loadLanguage('javascript', 'typescript', 'java');
+			await highlighter.loadLanguage(...langs);
 			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: 'poimandres' }));
 			return `{@html \`${html}\`}`;
 		}
