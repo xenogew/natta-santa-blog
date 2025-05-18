@@ -7,7 +7,6 @@
 	};
 	let { data }: Props = $props();
 	const { posts, total, hasMore } = data;
-	console.log('posts', posts, total, hasMore);
 </script>
 
 <div class="container h-full items-center justify-center py-8">
