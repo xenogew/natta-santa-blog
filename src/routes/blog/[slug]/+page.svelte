@@ -16,9 +16,7 @@
 	<meta property="og:title" content={title} />
 </svelte:head>
 
-<section
-	class="bg-surface-100 my-6 max-w-4xl p-6 shadow-md sm:rounded-md dark:bg-slate-700"
->
+<section class="bg-surface-100 my-6 max-w-4xl p-6 shadow-md sm:rounded-md dark:bg-slate-700">
 	<article class="markdown">
 		<Content />
 
@@ -26,7 +24,8 @@
 			Tags:
 			{#each tags as tag, key}
 				<a href="{base}/blog/tags/{tag}" aria-label="tag-{key}"
-					><span class="chip preset-outlined-secondary-500 hover:preset-glass-secondary m-0.5">{tag}</span
+					><span class="chip preset-outlined-secondary-500 hover:preset-glass-secondary m-0.5"
+						>{tag}</span
 					></a
 				>
 			{/each}

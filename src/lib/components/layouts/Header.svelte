@@ -6,18 +6,19 @@
 	import ThemeSwitch from '$lib/components/ThemeSwitch.svelte';
 
 	let searchQuery = $state('');
-	let searchBox:HTMLInputElement;
+	let searchBox: HTMLInputElement;
 </script>
 
 <svelte:window
 	onkeydown={(e) => {
-		console.log(e.key, e.keyCode);
-		// if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
-		// 		e.preventDefault();
-		// 		searchBox.focus();
-		// 	}
+		console.log(e.key, e.ctrlKey);
+		if (e.ctrlKey || e.metaKey) {
+			if (e.key === 'k' || e.key === 'K') {
+				e.preventDefault();
+				searchBox.focus();
+			}
 		}
-	}
+	}}
 />
 
 <!-- App Bar -->
