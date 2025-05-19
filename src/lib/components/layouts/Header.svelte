@@ -5,8 +5,20 @@
 	import Icon from '@iconify/svelte';
 	import ThemeSwitch from '$lib/components/ThemeSwitch.svelte';
 
-	let searchQuery = '';
+	let searchQuery = $state('');
+	let searchBox:HTMLInputElement;
 </script>
+
+<svelte:window
+	onkeydown={(e) => {
+		console.log(e.key, e.keyCode);
+		// if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+		// 		e.preventDefault();
+		// 		searchBox.focus();
+		// 	}
+		}
+	}
+/>
 
 <!-- App Bar -->
 <AppBar background="bg-surface-200 dark:bg-surface-700">
@@ -46,6 +58,7 @@
 					type="search"
 					placeholder="Search..."
 					autocomplete="off"
+					bind:this={searchBox}
 					bind:value={searchQuery}
 					class="dark:bg-surface-800 border-surface-500 dark:border-surface-900 max-w-[200px] rounded-md border-2 bg-slate-200 focus:border-transparent focus:ring-1 focus:ring-zinc-900 focus:outline-2 dark:placeholder-slate-100"
 				/>
