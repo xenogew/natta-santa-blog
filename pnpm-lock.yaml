@@ -65,6 +65,9 @@ importers:
       eslint-plugin-svelte:
         specifier: ^3.8.1
         version: 3.8.1(eslint@9.27.0(jiti@2.4.2))(svelte@5.30.2)
+      flexsearch:
+        specifier: ^0.8.167
+        version: 0.8.167
       globals:
         specifier: ^16.1.0
         version: 16.1.0
@@ -1378,6 +1381,9 @@ packages:
 
   flatted@3.3.3:
     resolution: {integrity: sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==}
+
+  flexsearch@0.8.167:
+    resolution: {integrity: sha512-iCBbY9npWhNlTCiHha2pwGqtbhpSEHx8+m5FJab+DLr/IKMneLNDgWbu2+IOvsAHo/Euo2Fu/5awrAEhN4q8Jw==}
 
   foreground-child@3.3.1:
     resolution: {integrity: sha512-gIXjKqtFuWEgzFRJA9WCQeSJLZDjgJUOMCMzxtvFq/37KojM1BFGufqsCy0r4qSQmYLsZYMeyRqzIWOMup03sw==}
@@ -3805,6 +3811,8 @@ snapshots:
       keyv: 4.5.4
 
   flatted@3.3.3: {}
+
+  flexsearch@0.8.167: {}
 
   foreground-child@3.3.1:
     dependencies:

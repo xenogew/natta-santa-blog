@@ -36,6 +36,7 @@
 		"eslint": "^9.27.0",
 		"eslint-config-prettier": "^10.1.5",
 		"eslint-plugin-svelte": "^3.8.1",
+		"flexsearch": "^0.8.167",
 		"globals": "^16.1.0",
 		"jsdom": "^26.1.0",
 		"mdsvex": "^0.12.6",
