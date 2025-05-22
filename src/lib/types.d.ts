@@ -1,9 +1,18 @@
+import type { Component } from 'svelte';
+
 export type GlobFile = {
 	metadata: object;
-	default: any;
+	default: Component;
+};
+
+export type Post = {
+	title: string;
+	slug: string;
+	content: string;
 };
 
 export type MarkdownPost = {
+	id: number;
 	slug: string;
 	title: string;
 	subtitle: string;
@@ -30,7 +39,7 @@ export interface PaginationParams {
 }
 
 export type BlogPost = {
-	Content: any;
+	Content: Component;
 	title: string;
 	date: Date;
 	tags: Array<string>;

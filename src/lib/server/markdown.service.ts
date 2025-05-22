@@ -28,7 +28,7 @@ export class MarkdownService {
 	}
 
 	private async fetchMarkdownPosts(): Promise<MarkdownPost[]> {
-		const allPostFiles = import.meta.glob('/src/routes/blog/contents/*.md', {
+		const allPostFiles = import.meta.glob('/blog/contents/*.md', {
 			eager: true
 		}) as Record<string, GlobFile>;
 		const posts: MarkdownPost[] = [];
