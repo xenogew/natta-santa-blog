@@ -5,6 +5,8 @@
 
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+@plugin "tailwindcss-animate";
+@plugin 'tailwind-scrollbar';
 
 @source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
 
