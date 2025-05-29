@@ -7,7 +7,8 @@ tags:
   - 'example'
   - 'markdown'
 published: true
-author: 'me'
+slug: one
+author: me
 sample: 'this is a sample Svelte + MDSVEX example...'
 ---
 
