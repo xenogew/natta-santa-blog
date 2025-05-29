@@ -3,7 +3,7 @@ import type { MarkdownPost } from '$lib/types';
 const LAST_POSITION = -1;
 
 export const fetchMarkdownPost = async () => {
-	const allPostFiles = import.meta.glob('/blog/contents/*.md', { eager: true });
+	const allPostFiles = import.meta.glob('/blog/**/*.md', { eager: true });
 	const allPosts: MarkdownPost[] = [];
 
 	for (const postFile in allPostFiles) {

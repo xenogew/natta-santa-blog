@@ -7,7 +7,7 @@ export class MarkdownService {
 	private readonly SAMPLE_LENGTH = 600;
 
 	async getPaginatedPosts(
-		params?: Partial<PaginationParams>
+		params?: Partial<PaginationParams>,
 	): Promise<BlogPostsResponse<MarkdownPost>> {
 		const page = params?.page || 1;
 		const limit = params?.limit || this.PAGE_SIZE;
@@ -23,13 +23,13 @@ export class MarkdownService {
 			total: sortedPosts.length,
 			currentPage: page,
 			totalPages: Math.ceil(sortedPosts.length / limit),
-			hasMore: end < sortedPosts.length
+			hasMore: end < sortedPosts.length,
 		} as BlogPostsResponse<MarkdownPost>;
 	}
 
 	private async fetchMarkdownPosts(): Promise<MarkdownPost[]> {
-		const allPostFiles = import.meta.glob('/blog/contents/*.md', {
-			eager: true
+		const allPostFiles = import.meta.glob('/blog/**/*.md', {
+			eager: true,
 		}) as Record<string, GlobFile>;
 		const posts: MarkdownPost[] = [];
 

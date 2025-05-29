@@ -14,15 +14,15 @@ const patterns: Record<string, RegExp> = {
 	bold: /\*\*/g,
 	italic: /\b_([^_]+)_(?!\w)/g,
 	special: /{%.*?%}/g,
-	tags: /[<>]/g
+	tags: /[<>]/g,
 };
 
 const htmlEntities: Record<string, string> = {
 	'<': '&lt;',
-	'>': '&gt;'
+	'>': '&gt;',
 };
 
-function stripMarkdown(markdown: string) {
+function stripMarkdown(markdown: string): string {
 	for (const pattern in patterns) {
 		switch (pattern) {
 			case 'inline':
@@ -46,19 +46,23 @@ function stripMarkdown(markdown: string) {
 }
 
 export async function GET() {
-	const paths = import.meta.glob('/posts/**/*.md', { as: 'raw', eager: true });
+	const paths = import.meta.glob<string>('/blog/**/*.md', {
+		query: '?raw',
+		eager: true,
+		import: 'default',
+	});
 	const posts = Object.entries(paths)
 		.map(([, content]) => {
-			const frontmatter = matter(content);
+			const { data } = matter(content);
 
-			if (frontmatter.data.draft) {
+			if (!data.published) {
 				return null;
 			}
 
 			return {
-				title: frontmatter.data.title,
-				slug: frontmatter.data.slug,
-				content: stripMarkdown(content)
+				title: data.title,
+				slug: data.slug,
+				content: stripMarkdown(content),
 			};
 		})
 		.filter(Boolean);

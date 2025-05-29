@@ -1,46 +1,52 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
+	import { onNavigate } from '$app/navigation';
+	import { onMount } from 'svelte';
+	import type { Result } from '$lib/types';
+	import { Dialog } from 'bits-ui';
 	import SearchWorker from '$lib/search-worker?worker';
 	import Icon from '@iconify/svelte';
-	import { createPostsIndex, searchPostsIndex } from '$lib/search';
-	import { Command, Dialog } from 'bits-ui';
 	import Kbd from '$lib/components/Kbd.svelte';
 
-	const platform = browser && window.navigator.platform;
+	const platform = browser && navigator.userAgentData?.platform;
 
 	let dialogOpening = $state(false);
+	let selectedIndex = $state(-1);
 
-	let searchQuery = $state('');
-	let searchBox: HTMLInputElement;
-	let isSearchOpen = $state(false);
+	let searchWorker: Worker;
+	let searchStatus: 'idle' | 'loading' | 'ready' = $state('idle');
+	let searchTerm: string = $state('');
+	let results: Result[] = $state([]);
 
-	let search: 'loading' | 'ready' = $state('loading');
-	let searchTerm = 'joy';
-	let results = [];
-
+	// all posts coming here at component mounted
 	onMount(async () => {
-		const response = await fetch('/search.json');
-		const posts = await response.json();
-		createPostsIndex(posts);
-		search = 'ready';
-
-		// Add keyboard shortcut listener
-		window.addEventListener('keydown', (e) => {
-			if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-				e.preventDefault();
-				isSearchOpen = !isSearchOpen;
-			}
-			if (e.key === 'Escape' && isSearchOpen) {
-				isSearchOpen = false;
-			}
+		// /api/search endpoint implementation
+		searchWorker = new SearchWorker();
+		searchWorker.addEventListener('message', (e) => {
+			const { type, payload } = e.data;
+			if (type === 'ready') searchStatus = 'ready';
+			if (type === 'results') results = payload.results;
 		});
+		searchWorker.postMessage({ type: 'load' });
+	});
+
+	onNavigate(() => {
+		dialogOpening = false;
 	});
 
 	$effect(() => {
-		if (search === 'ready') {
-			results = searchPostsIndex(searchTerm);
-			console.log(results);
+		if (searchStatus === 'ready' && searchTerm) {
+			searchWorker.postMessage({ type: 'search', payload: { searchTerm } });
+		}
+
+		if (searchTerm === '') {
+			results = [];
+		}
+	});
+
+	$effect(() => {
+		if (!dialogOpening) {
+			searchTerm = '';
 		}
 	});
 </script>
@@ -48,7 +54,6 @@
 <svelte:window
 	onkeydown={(e) => {
 		if (e.key === 'k' && (e.ctrlKey || e.metaKey)) {
-			console.log('Wol');
 			e.preventDefault();
 			dialogOpening = true;
 		}
@@ -80,91 +85,58 @@
 		<Dialog.Content
 			class="rounded-container-lg bg-surface-50 dark:bg-surface-900 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] fixed top-[50%] left-[50%] z-50 w-full max-w-[94%] translate-x-[-50%] translate-y-[-50%] shadow-lg outline-none sm:max-w-[490px] md:w-full"
 		>
-			<Dialog.Title class="sr-only">Command Menu</Dialog.Title>
-			<Dialog.Description class="sr-only">
-				This is the command menu. Use the arrow keys to navigate and press ⌘K to open the search
-				bar.
-			</Dialog.Description>
-			<Command.Root
+			<Dialog.Title class="sr-only">Search Toolbar</Dialog.Title>
+			<Dialog.Description class="sr-only">press ⌘K to open the search bar.</Dialog.Description>
+			<div
 				class="divide-surface-300 dark:divide-surface-700 rounded-container-lg border-surface-300 dark:border-surface-700 bg-surface-50 dark:bg-surface-900 flex h-full w-full flex-col divide-y self-start overflow-hidden border"
 			>
-				<Command.Input
+				<input
 					class="rounded-container-token bg-surface-50 dark:bg-surface-900 text-surface-900 dark:text-surface-50 placeholder:text-surface-500 dark:placeholder:text-surface-400 inline-flex h-12 truncate border-0 border-b px-4 text-sm transition-colors focus:ring-0 focus:outline-none"
 					placeholder="Search for blog post..."
+					bind:value={searchTerm}
+					autocomplete="off"
+					spellcheck="false"
+					type="search"
 				/>
-				<Command.List
+
+				<div
 					class="scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-thumb-surface-500 dark:scrollbar-thumb-surface-700 scrollbar-track-surface-100 dark:scrollbar-track-surface-800 max-h-[280px] overflow-x-hidden overflow-y-auto px-2 pb-2"
 				>
-					<Command.Viewport>
-						<Command.Empty
+					{#if results.length === 0}
+						<div
 							class="text-surface-500 dark:text-surface-400 flex w-full items-center justify-center pt-8 pb-6 text-sm"
 						>
 							No results found.
-						</Command.Empty>
-						<Command.Group>
-							<Command.GroupHeading
-								class="text-surface-500 dark:text-surface-400 px-3 pt-4 pb-2 text-xs"
+						</div>
+					{:else}
+						{#each results as result, index (result.id)}
+							<a
+								class="hover:bg-surface-200 dark:hover:bg-surface-700 flex cursor-pointer items-start gap-2 rounded px-3 py-3 text-sm transition-colors outline-none select-none {selectedIndex ===
+								index
+									? 'bg-primary-500/20 dark:bg-primary-500/30'
+									: ''}"
+								href="/blog/{result.slug}"
+								onclick={() => {
+									dialogOpening = false;
+								}}
 							>
-								Suggestions
-							</Command.GroupHeading>
-							<Command.GroupItems>
-								<Command.Item
-									class="hover:bg-surface-200 dark:hover:bg-surface-700 data-[selected=true]:bg-primary-500/20 dark:data-[selected=true]:bg-primary-500/30 flex h-10 cursor-pointer items-center gap-2 rounded px-3 py-2.5 text-sm capitalize outline-none select-none"
-									keywords={['getting started', 'tutorial']}
-								>
-									<Icon icon="mdi:sticker-outline" class="size-4" />
-									Introduction
-								</Command.Item>
-								<Command.Item
-									class="hover:bg-surface-200 dark:hover:bg-surface-700 data-[selected=true]:bg-primary-500/20 dark:data-[selected=true]:bg-primary-500/30 flex h-10 cursor-pointer items-center gap-2 rounded px-3 py-2.5 text-sm capitalize outline-none select-none"
-									keywords={['child', 'custom element', 'snippets']}
-								>
-									<Icon icon="material-symbols:code" class="size-4" />
-									Delegation
-								</Command.Item>
-								<Command.Item
-									class="hover:bg-surface-200 dark:hover:bg-surface-700 data-[selected=true]:bg-primary-500/20 dark:data-[selected=true]:bg-primary-500/30 flex h-10 cursor-pointer items-center gap-2 rounded px-3 py-2.5 text-sm capitalize outline-none select-none"
-									keywords={['css', 'theme', 'colors', 'fonts', 'tailwind']}
-								>
-									<Icon icon="solar:pallete-2-bold" class="size-4" />
-									Styling
-								</Command.Item>
-							</Command.GroupItems>
-						</Command.Group>
-						<Command.Separator />
-						<Command.Group>
-							<Command.GroupHeading
-								class="text-surface-500 dark:text-surface-400 px-3 pt-4 pb-2 text-xs"
-							>
-								Components
-							</Command.GroupHeading>
-							<Command.GroupItems>
-								<Command.Item
-									class="hover:bg-surface-200 dark:hover:bg-surface-700 data-[selected=true]:bg-primary-500/20 dark:data-[selected=true]:bg-primary-500/30 flex h-10 cursor-pointer items-center gap-2 rounded px-3 py-2.5 text-sm capitalize outline-none select-none"
-									keywords={['dates', 'times']}
-								>
-									<Icon icon="mdi:calendar" class="size-4" />
-									Calendar
-								</Command.Item>
-								<Command.Item
-									class="hover:bg-surface-200 dark:hover:bg-surface-700 data-[selected=true]:bg-primary-500/20 dark:data-[selected=true]:bg-primary-500/30 flex h-10 cursor-pointer items-center gap-2 rounded px-3 py-2.5 text-sm capitalize outline-none select-none"
-									keywords={['buttons', 'forms']}
-								>
-									<Icon icon="radix-icons:radiobutton" class="size-4" />
-									Radio Group
-								</Command.Item>
-								<Command.Item
-									class="hover:bg-surface-200 dark:hover:bg-surface-700 data-[selected=true]:bg-primary-500/20 dark:data-[selected=true]:bg-primary-500/30 flex h-10 cursor-pointer items-center gap-2 rounded px-3 py-2.5 text-sm capitalize outline-none select-none"
-									keywords={['inputs', 'text', 'autocomplete']}
-								>
-									<Icon icon="mingcute:textbox-line" class="size-4" />
-									Combobox
-								</Command.Item>
-							</Command.GroupItems>
-						</Command.Group>
-					</Command.Viewport>
-				</Command.List>
-			</Command.Root>
+								<div class="flex w-full flex-col gap-1">
+									<h3
+										class="text-surface-900 dark:text-surface-50 text-sm leading-tight font-medium"
+									>
+										{@html result.title}
+									</h3>
+									<div
+										class="text-surface-600 dark:text-surface-400 line-clamp-2 text-xs leading-relaxed"
+									>
+										{@html result.content}
+									</div>
+								</div>
+							</a>
+						{/each}
+					{/if}
+				</div>
+			</div>
 		</Dialog.Content>
 	</Dialog.Portal>
 </Dialog.Root>

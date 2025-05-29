@@ -11,6 +11,13 @@ export type Post = {
 	content: string;
 };
 
+export type Result = {
+  id: number;
+	content: string[]
+	slug: string
+	title: string
+}
+
 export type MarkdownPost = {
 	id: number;
 	slug: string;
