@@ -16,33 +16,33 @@ const mdsvexOptions = {
 		[
 			autoLinkHeadings,
 			{
-				behavior: 'append'
-			}
-		]
+				behavior: 'append',
+			},
+		],
 	],
 	remarkPlugins: [remarkHeadingId],
 	highlight: {
 		highlighter: async (code, lang = 'text') => {
 			const highlighter = await createHighlighter({
 				themes: ['poimandres'],
-				langs
+				langs,
 			});
 			await highlighter.loadLanguage(...langs);
 			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: 'poimandres' }));
 			return `{@html \`${html}\`}`;
-		}
-	}
+		},
+	},
 };
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	alias: {
 		$components: 'src/lib/components',
-		$src: 'src'
+		$src: 'src',
 	},
 	preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
 	kit: { adapter: adapter() },
-	extensions: ['.svelte', '.md', '.svx']
+	extensions: ['.svelte', '.md', '.svx'],
 };
 
 export default config;
