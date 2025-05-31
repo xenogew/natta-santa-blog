@@ -67,10 +67,10 @@
 	>
 		<Icon
 			icon="material-symbols:search"
-			class="text-surface-600 dark:text-surface-300 h-4 w-4 flex-shrink-0"
+			class="text-surface-600 dark:text-surface-50 h-4 w-4 flex-shrink-0"
 		/>
 		<span
-			class="text-surface-700 dark:text-surface-300 hidden text-xs font-medium sm:inline sm:text-sm"
+			class="text-surface-700 dark:text-surface-50 hidden text-xs font-medium sm:inline sm:text-sm"
 			>Search</span
 		>
 		<div class="ml-1 hidden items-center md:flex">
