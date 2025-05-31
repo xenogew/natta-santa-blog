@@ -10,9 +10,9 @@ export default defineConfig({
 		fs: {
 			allow: [
 				searchForWorkspaceRoot(process.cwd()),
-				'static/.well-known/appspecific/com.chrome.devtools.json'
-			]
-		}
+				'static/.well-known/appspecific/com.chrome.devtools.json',
+			],
+		},
 	},
 	test: {
 		workspace: [
@@ -25,8 +25,8 @@ export default defineConfig({
 					clearMocks: true,
 					include: ['src/**/*.svelte.{test,spec}.{js,ts}'],
 					exclude: ['src/lib/server/**'],
-					setupFiles: ['./vitest-setup-client.ts']
-				}
+					setupFiles: ['./vitest-setup-client.ts'],
+				},
 			},
 			{
 				extends: './vite.config.ts',
@@ -34,9 +34,9 @@ export default defineConfig({
 					name: 'server',
 					environment: 'node',
 					include: ['src/**/*.{test,spec}.{js,ts}'],
-					exclude: ['src/**/*.svelte.{test,spec}.{js,ts}']
-				}
-			}
-		]
-	}
+					exclude: ['src/**/*.svelte.{test,spec}.{js,ts}'],
+				},
+			},
+		],
+	},
 });

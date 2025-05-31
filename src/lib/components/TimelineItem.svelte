@@ -13,7 +13,7 @@
 		badgeText = '',
 		icon = 'ri:calendar-line',
 		pub = false,
-		displayPrivate = false
+		displayPrivate = false,
 	}: Props = $props();
 
 	let timelineIconWidth = $state(24);

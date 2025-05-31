@@ -17,7 +17,7 @@
 	});
 
 	const themeMode = $derived(
-		currentMode === 'dark' ? 'line-md:sun-rising-twotone-loop' : 'line-md:moon-loop'
+		currentMode === 'dark' ? 'line-md:sun-rising-twotone-loop' : 'line-md:moon-loop',
 	);
 	const themeColor = $derived(currentMode === 'light' ? '#FF5F1F' : '#FFEF00');
 </script>
@@ -36,12 +36,12 @@
 			</div>
 		</div>
 	{/if}
-	{#each posts as post, i}
+	{#each posts as post (post.id)}
 		<div>
 			<span
 				class="badge-icon bg-surface-500 p-3 text-base font-extrabold shadow-md dark:bg-slate-800 dark:shadow-none"
 			>
-				{i + 1}
+				{post.id + 1}
 			</span>
 			<span class="flex-auto">
 				<dt>

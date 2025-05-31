@@ -4,6 +4,6 @@ export const load = (async ({ url }) => {
 	let code: string = url.searchParams.get('code') ?? '';
 
 	return {
-		code
+		code,
 	};
 }) satisfies PageLoad;

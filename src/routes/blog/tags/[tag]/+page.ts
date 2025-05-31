@@ -8,6 +8,6 @@ export const load = (async ({ fetch, params }) => {
 	const posts = allPosts.filter((post) => post.tags.includes(tag));
 	return {
 		tag,
-		posts
+		posts,
 	};
 }) satisfies PageLoad;

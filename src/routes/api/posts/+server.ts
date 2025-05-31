@@ -10,7 +10,7 @@ export const GET = (async ({ url }): Promise<Response> => {
 
 	const allPosts: BlogPostsResponse<MarkdownPost> = await markdownService.getPaginatedPosts({
 		page,
-		limit
+		limit,
 	});
 	return json(allPosts);
 }) satisfies RequestHandler;

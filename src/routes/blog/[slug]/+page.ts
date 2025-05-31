@@ -5,7 +5,7 @@ import { error } from '@sveltejs/kit';
 export const load = (async ({ params }): Promise<BlogPost> => {
 	try {
 		/* @vite-ignore */
-		const post = await import(`/blog/${params.slug}/${params.slug}.md`);
+		const post = await import(`../../../../blog/${params.slug}/${params.slug}.md`);
 		const { title, date, tags } = post.metadata;
 		const Content = post.default;
 

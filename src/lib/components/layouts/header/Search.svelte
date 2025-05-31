@@ -8,6 +8,7 @@
 	import Icon from '@iconify/svelte';
 	import Kbd from '$lib/components/Kbd.svelte';
 
+	// TODO: warning of unpatch nodejs
 	const platform = browser && navigator.userAgentData?.platform;
 
 	let dialogOpening = $state(false);
