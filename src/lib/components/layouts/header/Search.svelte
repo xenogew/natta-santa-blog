@@ -63,6 +63,8 @@
 
 <Dialog.Root bind:open={dialogOpening}>
 	<Dialog.Trigger
+		id="search-trigger"
+		aria-label="search-trigger"
 		class="border-surface-300 dark:border-surface-600 bg-surface-50 dark:bg-surface-800 hover:bg-surface-100 dark:hover:bg-surface-700 focus:ring-primary-500 flex h-8 items-center gap-1 rounded-md border px-2.5 py-1 shadow-sm transition-all duration-200 focus:ring-2 focus:outline-none sm:gap-1.5 sm:px-3 sm:py-5"
 	>
 		<Icon
