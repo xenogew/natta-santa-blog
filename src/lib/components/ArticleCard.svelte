@@ -16,7 +16,7 @@
 	class="card preset-filled-surface-100-900 border-surface-200-800 card-hover divide-surface-200-800 flex flex-col divide-y overflow-hidden border-[1px]"
 >
 	<header class="flex-none">
-		<img src={cover} class="aspect-[21/9] w-full" alt={title} />
+		<img src={cover} class="aspect-[21/9] w-full object-contain" alt={title} />
 	</header>
 	<article class="flex flex-auto flex-col p-4">
 		<div class="flex-none">
