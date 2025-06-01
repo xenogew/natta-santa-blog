@@ -19,7 +19,7 @@
 	onCheckedChange={(e) => {
 		switchMode(e.checked);
 	}}
-	classes="invisible md:visible"
+	base="hidden md:inline-flex items-center gap-4 "
 	labelClasses="hidden"
 >
 	{#snippet inactiveChild()}<Icon icon="lucide:moon" width="24" height="24" />{/snippet}

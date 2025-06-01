@@ -16,7 +16,9 @@
 	<meta property="og:title" content={title} />
 </svelte:head>
 
-<section class="bg-surface-100 my-6 max-w-4xl p-6 shadow-md sm:rounded-md dark:bg-slate-700">
+<section
+	class="bg-surface-100 mx-auto my-0 max-w-4xl p-6 shadow-md sm:my-6 sm:rounded-md dark:bg-slate-700"
+>
 	<article class="markdown">
 		<Content />
 

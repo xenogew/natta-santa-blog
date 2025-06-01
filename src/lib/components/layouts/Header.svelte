@@ -8,7 +8,7 @@
 </script>
 
 <!-- App Bar -->
-<AppBar background="bg-surface-200 dark:bg-surface-700">
+<AppBar background="w-full bg-surface-200 dark:bg-surface-700" trailBase="my-auto">
 	{#snippet lead()}
 		<div class="flex items-center justify-center text-xl uppercase">
 			<a href="{base}/" class="flex items-center">
@@ -33,13 +33,15 @@
 						/>
 					</span>
 				{/if}
-				<span class="m-auto ml-4 content-center font-mono text-2xl capitalize"> Natta::Santa </span>
+				<span class="m-auto ml-4 content-center font-mono text-lg capitalize lg:text-2xl">
+					Natta::Santa
+				</span>
 			</a>
 		</div>
 	{/snippet}
 
 	{#snippet trail()}
-		<div class="flex items-center gap-4">
+		<div class="flex items-center justify-items-end gap-4">
 			<Search />
 			<ThemeSwitch />
 		</div>
