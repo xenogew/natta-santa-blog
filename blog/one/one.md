@@ -1,0 +1,88 @@
+---
+title: Post One
+subtitle: 'A Post For example'
+date: '2021-12-14'
+tags:
+  - 'coding'
+  - 'example'
+  - 'markdown'
+published: true
+slug: one
+author: me
+sample: 'this is a sample Svelte + MDSVEX example...'
+---
+
+# {title}
+
+## heading 2
+
+### heading 3
+
+> {date}
+>
+> > Absent
+
+**Here's some stuff I use**
+
+_Here's italic line_
+
+```java
+// JavaScript goes here,
+// And will be syntax-highlighted!
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+### Show the image
+
+![Squidy](https://cdn-icons-png.flaticon.com/64/3823/3823087.png)
+
+[My Github](https://github.com/xenogew)
+
+### Bullet list
+
+- SvelteKit
+- VS Code
+- Emojis 😎
+
+### Ordered list
+
+1. Cat
+2. Dog
+3. Dolphin `codename: Sarlaza`
+
+---
+
+~~The world is flat.~~
+
+### Table, Hope it's cool {#custom-worked-now}
+
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+
+- [x] Write the press release
+- [ ] Update the website
+- [x] Contact the media
+
+### Things that MDsvex still not support lorem ipsum facalty hinge or some of runes debugger online quare quick quin wholesome offload folder pint time faboulous large gold of many many finnge else oops {#i-found-something-cool}
+
+#### Highlight ❌
+
+I need to highlight these ==very important words==.
+
+#### Definition List ❌
+
+term
+: definition
+
+#### Subscript / Superscript ❌
+
+H~2~O
+
+X^2^

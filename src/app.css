@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton/optional/presets';
+@import '@skeletonlabs/skeleton/themes/rocket';
+
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+@plugin "tailwindcss-animate";
+@plugin 'tailwind-scrollbar';
+
+@source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
+
+@custom-variant dark (&:where(.dark, .dark *));
