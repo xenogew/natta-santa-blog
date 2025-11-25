@@ -1,6 +1,6 @@
 <script lang="ts">
 	import BuyMeCoffee from '$lib/components/BuyMeCoffee.svelte';
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 </script>
 
 <footer
@@ -22,7 +22,7 @@
 						<a
 							class="btn-footer-menu"
 							data-sveltekit-preload-data="tap"
-							href="{base}/blog"
+							href={resolve('/blog')}
 							rel="noreferrer"
 						>
 							.blog()
@@ -32,7 +32,7 @@
 						<a
 							class="btn-footer-menu"
 							data-sveltekit-preload-data="tap"
-							href="{base}/about"
+							href={resolve('/about')}
 							rel="noreferrer"
 						>
 							.about()

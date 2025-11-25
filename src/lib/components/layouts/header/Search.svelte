@@ -112,7 +112,7 @@
 							No results found.
 						</div>
 					{:else}
-						{#each results as result, index (result.id)}
+						{#each results as result, index}
 							<a
 								class="hover:bg-surface-200 dark:hover:bg-surface-700 flex cursor-pointer items-start gap-2 rounded px-3 py-3 text-sm transition-colors outline-none select-none {selectedIndex ===
 								index

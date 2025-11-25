@@ -1,10 +1,11 @@
 <script lang="ts">
 	import type { LayoutData } from './$types';
-	import type { Snippet } from 'svelte';
+	import { onMount, type Snippet } from 'svelte';
 	import '../app.css';
 	import { fade } from 'svelte/transition';
 	import Header from '$lib/components/layouts/Header.svelte';
 	import Footer from '$lib/components/layouts/Footer.svelte';
+	import { initDarkMode } from '$lib/stores';
 
 	type Props = {
 		data: LayoutData;
@@ -12,10 +13,14 @@
 	};
 
 	let { data, children }: Props = $props();
+
+	onMount(() => {
+		initDarkMode();
+	});
 </script>
 
 <svelte:head>
-	<title>Natta Santa: A poor Dev Blog but trying to do better</title>
+	<title>Natta Santa: A poor Dev Blog but I'm trying to do better</title>
 </svelte:head>
 
 <!-- Main Layout -->

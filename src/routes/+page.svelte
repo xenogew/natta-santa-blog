@@ -13,7 +13,7 @@
 	<div
 		class="grid auto-rows-fr grid-cols-1 gap-4 text-center md:grid-cols-2 md:gap-6 lg:grid-cols-3"
 	>
-		{#each posts as article (article.id)}
+		{#each posts as article}
 			<ArticleCard {...article} />
 		{/each}
 	</div>
