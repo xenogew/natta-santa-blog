@@ -21,11 +21,11 @@
 	<article class="flex flex-auto flex-col p-4">
 		<div class="flex-none">
 			{#if subtitle}
-				<span class="p-3 text-base font-extrabold">
+				<span class="p-3 text-base font-semibold">
 					{subtitle}
 				</span>
 			{/if}
-			<h3 class="h3">{title}</h3>
+			<h3 class="h3 font-(family-name:--base-font-family) font-extrabold">{title}</h3>
 		</div>
 		<p class="flex-auto opacity-75">
 			{sample}
