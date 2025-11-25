@@ -3,12 +3,15 @@
 	"IDX.aI.enableCodebaseIndexing": true,
 	"terminal.integrated.defaultProfile.linux": "fish",
 	"workbench.editor.labelFormat": "short",
-	"explorer.sortOrder": "filesFirst",
+	"explorer.sortOrder": "default",
 	"explorer.compactFolders": false,
 	"circleci.persistedProjectSelection": [],
 	"css.customData": [".vscode/tailwind.json"],
 	"css.lint.unknownAtRules": "ignore",
 	"editor.wordWrap": "on",
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": false,
+	"files.autoSave": "afterDelay",
 	"terminal.integrated.profiles.linux": {
 		"bash": {
 			"path": "bash",
