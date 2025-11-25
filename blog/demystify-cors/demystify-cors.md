@@ -77,11 +77,14 @@ Access-Control-Allow-Origin: *
    - NodeJS 22+
    - PNPM for Node Package Management
 2. Checkout จาก repository
+
    ```
    https://github.com/santa-sandbox/demystify-cors
    ```
+
    - `spring-boot` สำหรับ backend
    - `svelte` สำหรับ frontend
+
 3. สั่งรัน backend
    1. `cd spring-boot`
    2. `./mvnw spring-boot:run` เพื่อสั่งรัน backend
