@@ -1,23 +1,22 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import type { PageData } from './$types';
 
 	type Props = {
 		data: PageData;
 	};
 	let { data }: Props = $props();
-	const { tag, posts } = data;
 </script>
 
 <!-- ...Post HTML here -->
-<h2>{tag}</h2>
-{#if posts.length}
+<h2>{data.tag}</h2>
+{#if data.posts.length}
 	<aside>
 		<h4>Posted in:</h4>
 		<ul>
-			{#each posts as post}
+			{#each data.posts as post}
 				<li>
-					<a href="{base}{post.path}">
+					<a href={resolve(`/blog/${post.path}`)}>
 						{post.title}
 					</a>
 				</li>

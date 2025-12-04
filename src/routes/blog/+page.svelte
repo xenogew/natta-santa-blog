@@ -1,16 +1,14 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import Icon from '@iconify/svelte';
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import { checkCurrentMode } from '$lib/utils';
 	import { onMount } from 'svelte';
 
 	type Props = {
 		data: PageData;
 	};
-
 	let { data }: Props = $props();
-	const { currentRoute, posts } = data;
 	let currentMode: string = 'light';
 	onMount(() => {
 		currentMode = checkCurrentMode(document);
@@ -25,7 +23,7 @@
 <h1 class="h1 my-3">Blog</h1>
 
 <dl class="list-dl">
-	{#if posts && posts.length === 0}
+	{#if data.posts && data.posts.length === 0}
 		<div class="flex flex-col">
 			<h1 class="md:h2 my-4 break-all">There's no archived posts right now...</h1>
 			<div class="flex flex-col items-stretch">
@@ -36,7 +34,7 @@
 			</div>
 		</div>
 	{/if}
-	{#each posts as post (post.id)}
+	{#each data.posts as post}
 		<div>
 			<span
 				class="badge-icon bg-surface-500 p-3 text-base font-extrabold shadow-md dark:bg-slate-800 dark:shadow-none"
@@ -45,7 +43,7 @@
 			</span>
 			<span class="flex-auto">
 				<dt>
-					<a href="{base}{currentRoute}/{post.slug}" class="text-lg">
+					<a href="{resolve(data.currentRoute)}/{post.slug}" class="text-lg">
 						{post.title}
 					</a>
 				</dt>
