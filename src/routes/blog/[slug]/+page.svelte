@@ -1,12 +1,12 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import type { BlogPost } from '$lib/types';
-	import { base } from '$app/paths';
 
 	type Props = {
 		data: BlogPost;
 	};
 	let { data }: Props = $props();
-	const { title, Content, tags } = data;
+	let { title, Content, tags } = $derived(data);
 </script>
 
 <svelte:head>
@@ -25,7 +25,7 @@
 		<div class="my-4 py-2 text-sm">
 			Tags:
 			{#each tags as tag, key (key)}
-				<a href="{base}/blog/tags/{tag}" aria-label="tag-{key}"
+				<a href={resolve(`/blog/tags/${tag}`)} aria-label={`tag-${key}`}
 					><span class="chip preset-outlined-secondary-500 hover:preset-glass-secondary m-0.5"
 						>{tag}</span
 					></a

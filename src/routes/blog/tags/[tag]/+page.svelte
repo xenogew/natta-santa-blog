@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import type { PageData } from './$types';
 
 	type Props = {
 		data: PageData;
 	};
 	let { data }: Props = $props();
-	const { tag, posts } = data;
+	let { tag, posts } = $derived(data);
 </script>
 
 <!-- ...Post HTML here -->
@@ -17,7 +17,7 @@
 		<ul>
 			{#each posts as post}
 				<li>
-					<a href="{base}{post.path}">
+					<a href={resolve(`/blog/${post.path}`)}>
 						{post.title}
 					</a>
 				</li>

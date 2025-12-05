@@ -6,7 +6,7 @@
 		data: PageData;
 	};
 	let { data }: Props = $props();
-	const { posts, hasMore } = data;
+	let { posts, hasMore } = $derived(data);
 </script>
 
 <div class="container mx-auto h-full w-10/12 items-center justify-center py-8">

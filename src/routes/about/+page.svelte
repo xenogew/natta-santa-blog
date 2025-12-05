@@ -3,13 +3,13 @@
 	import { Avatar } from '@skeletonlabs/skeleton-svelte';
 	import Timeline from '$lib/components/Timeline.svelte';
 	import KeywordHighlight from '$lib/components/KeywordHighlight.svelte';
+	import { timelines } from '$lib/data/natta-timeline.json';
 
 	type Props = {
 		data: PageData;
 	};
 	let { data }: Props = $props();
-	let displayBio: boolean = (data.code ?? '') === 'reference_from_linkedin';
-	import { timelines } from '$lib/data/natta-timeline.json';
+	let { code } = $derived(data);
 </script>
 
 <svelte:head>
@@ -21,12 +21,10 @@
 >
 	<div class="flex flex-row justify-items-center gap-3">
 		<div class="grow-0 basis-1/5">
-			<Avatar
-				name="Santa"
-				src="santa-avatar.svg"
-				rounded="rounded-full"
-				classes="mx-auto w-32 h-32"
-			/>
+			<Avatar class="size-32">
+				<Avatar.Image src="santa-avatar.svg" alt="Natta Santa" />
+				<Avatar.Fallback>NS</Avatar.Fallback>
+			</Avatar>
 		</div>
 		<div class="basis-4/5">
 			<h2 class="h2 mb-4 font-mono">Hello, I'm Natta</h2>
@@ -46,5 +44,5 @@
 >
 	<h1 class="h1 mb-8 font-sans">Bio Timeline</h1>
 
-	<Timeline {timelines} displayPrivate={displayBio} />
+	<Timeline {timelines} displayPrivate={code === 'reference_from_linkedin'} />
 </section>

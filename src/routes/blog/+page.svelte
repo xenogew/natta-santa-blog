@@ -1,16 +1,15 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import Icon from '@iconify/svelte';
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import { checkCurrentMode } from '$lib/utils';
 	import { onMount } from 'svelte';
 
 	type Props = {
 		data: PageData;
 	};
-
 	let { data }: Props = $props();
-	const { currentRoute, posts } = data;
+	let { posts, currentRoute } = $derived(data);
 	let currentMode: string = 'light';
 	onMount(() => {
 		currentMode = checkCurrentMode(document);
@@ -36,7 +35,7 @@
 			</div>
 		</div>
 	{/if}
-	{#each posts as post (post.id)}
+	{#each posts as post}
 		<div>
 			<span
 				class="badge-icon bg-surface-500 p-3 text-base font-extrabold shadow-md dark:bg-slate-800 dark:shadow-none"
@@ -45,7 +44,7 @@
 			</span>
 			<span class="flex-auto">
 				<dt>
-					<a href="{base}{currentRoute}/{post.slug}" class="text-lg">
+					<a href="{resolve(currentRoute)}/{post.slug}" class="text-lg">
 						{post.title}
 					</a>
 				</dt>
