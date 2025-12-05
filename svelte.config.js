@@ -1,12 +1,10 @@
 import adapter from '@sveltejs/adapter-vercel';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex, escapeSvelte } from 'mdsvex';
-import { createHighlighter } from 'shiki';
+import { getSingletonHighlighter } from 'shiki';
 import slug from 'rehype-slug';
 import autoLinkHeadings from 'rehype-autolink-headings';
 import remarkHeadingId from 'remark-heading-id';
-
-const langs = ['javascript', 'typescript', 'java', 'html', 'css', 'bash', 'json', 'yaml'];
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
@@ -23,11 +21,11 @@ const mdsvexOptions = {
 	remarkPlugins: [remarkHeadingId],
 	highlight: {
 		highlighter: async (code, lang = 'text') => {
-			const highlighter = await createHighlighter({
+			const highlighter = await getSingletonHighlighter({
+				langs: [lang],
 				themes: ['poimandres'],
-				langs,
 			});
-			await highlighter.loadLanguage(...langs);
+			await highlighter.loadLanguage(lang);
 			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: 'poimandres' }));
 			return `{@html \`${html}\`}`;
 		},

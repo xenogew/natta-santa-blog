@@ -48,7 +48,8 @@
 	"pnpm": {
 		"onlyBuiltDependencies": [
 			"@tailwindcss/oxide",
-			"esbuild"
+			"esbuild",
+			"sharp"
 		]
 	},
 	"dependencies": {
@@ -56,6 +57,7 @@
 		"@iconify/svelte": "^5.1.0",
 		"@skeletonlabs/skeleton": "^4.7.2",
 		"@skeletonlabs/skeleton-svelte": "^4.7.2",
+		"@sveltejs/enhanced-img": "^0.9.2",
 		"@tailwindcss/forms": "^0.5.10",
 		"@tailwindcss/typography": "^0.5.19",
 		"bits-ui": "^2.14.4",

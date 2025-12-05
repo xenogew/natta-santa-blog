@@ -18,7 +18,7 @@
 </script>
 
 <Switch name="mode" {checked} {onCheckedChange}>
-	<Switch.Control class="data-[state=checked]:bg-surface-400">
+	<Switch.Control class="data-[state=checked]:bg-surface-400 data-[state=unchecked]:bg-slate-800">
 		<Switch.Thumb>
 			<Switch.Context>
 				{#snippet children(switch_)}
