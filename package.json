@@ -30,7 +30,7 @@
 		"@types/node": "^24.10.1",
 		"eslint": "^9.39.1",
 		"eslint-config-prettier": "^10.1.8",
-		"eslint-plugin-svelte": "^3.13.0",
+		"eslint-plugin-svelte": "^3.13.1",
 		"globals": "^16.5.0",
 		"jsdom": "^27.2.0",
 		"prettier": "^3.7.4",
@@ -49,6 +49,7 @@
 		]
 	},
 	"dependencies": {
+		"@fontsource-variable/noto-sans-thai": "^5.2.8",
 		"@iconify/svelte": "^5.1.0",
 		"@skeletonlabs/skeleton": "^4.7.2",
 		"@skeletonlabs/skeleton-svelte": "^4.7.2",
