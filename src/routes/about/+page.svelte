@@ -21,12 +21,10 @@
 >
 	<div class="flex flex-row justify-items-center gap-3">
 		<div class="grow-0 basis-1/5">
-			<Avatar
-				name="Santa"
-				src="santa-avatar.svg"
-				rounded="rounded-full"
-				classes="mx-auto w-32 h-32"
-			/>
+			<Avatar class="size-32">
+				<Avatar.Image src="santa-avatar.svg" alt="Natta Santa" />
+				<Avatar.Fallback>NS</Avatar.Fallback>
+			</Avatar>
 		</div>
 		<div class="basis-4/5">
 			<h2 class="h2 mb-4 font-mono">Hello, I'm Natta</h2>
