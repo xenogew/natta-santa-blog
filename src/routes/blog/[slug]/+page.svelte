@@ -6,24 +6,25 @@
 		data: BlogPost;
 	};
 	let { data }: Props = $props();
+	let { title, Content, tags } = $derived(data);
 </script>
 
 <svelte:head>
-	<title>Blog - {data.title}</title>
-	<meta name="description" content={data.title} />
+	<title>Blog - {title}</title>
+	<meta name="description" content={title} />
 	<meta property="og:type" content="article" />
-	<meta property="og:title" content={data.title} />
+	<meta property="og:title" content={title} />
 </svelte:head>
 
 <section
 	class="bg-surface-100 mx-auto my-0 max-w-4xl p-6 shadow-md sm:my-6 sm:rounded-md dark:bg-slate-700"
 >
 	<article class="markdown">
-		<data.Content />
+		<Content />
 
 		<div class="my-4 py-2 text-sm">
 			Tags:
-			{#each data.tags as tag, key (key)}
+			{#each tags as tag, key (key)}
 				<a href={resolve(`/blog/tags/${tag}`)} aria-label={`tag-${key}`}
 					><span class="chip preset-outlined-secondary-500 hover:preset-glass-secondary m-0.5"
 						>{tag}</span

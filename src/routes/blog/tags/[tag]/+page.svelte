@@ -6,15 +6,16 @@
 		data: PageData;
 	};
 	let { data }: Props = $props();
+	let { tag, posts } = $derived(data);
 </script>
 
 <!-- ...Post HTML here -->
-<h2>{data.tag}</h2>
-{#if data.posts.length}
+<h2>{tag}</h2>
+{#if posts.length}
 	<aside>
 		<h4>Posted in:</h4>
 		<ul>
-			{#each data.posts as post}
+			{#each posts as post}
 				<li>
 					<a href={resolve(`/blog/${post.path}`)}>
 						{post.title}

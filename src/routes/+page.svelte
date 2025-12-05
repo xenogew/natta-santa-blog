@@ -6,18 +6,19 @@
 		data: PageData;
 	};
 	let { data }: Props = $props();
+	let { posts, hasMore } = $derived(data);
 </script>
 
 <div class="container mx-auto h-full w-10/12 items-center justify-center py-8">
 	<div
 		class="grid auto-rows-fr grid-cols-1 gap-4 text-center md:grid-cols-2 md:gap-6 lg:grid-cols-3"
 	>
-		{#each data.posts as article}
+		{#each posts as article}
 			<ArticleCard {...article} />
 		{/each}
 	</div>
 
-	{#if data.hasMore}
+	{#if hasMore}
 		<a href="/blog" class="btn preset-filled-primary mt-6">View More Posts</a>
 	{/if}
 </div>

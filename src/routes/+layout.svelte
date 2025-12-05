@@ -14,6 +14,7 @@
 	};
 
 	let { data, children }: Props = $props();
+	let { currentRoute } = $derived(data);
 
 	onMount(() => {
 		initDarkMode();
@@ -31,7 +32,7 @@
 	<!-- Page Route Content -->
 	<div class="bg-surface-50 dark:bg-surface-800 flex-1 overflow-y-auto">
 		<section class="container mx-auto px-4 py-8">
-			{#key data.currentRoute}
+			{#key currentRoute}
 				<div
 					class="mx-auto md:mx-6"
 					in:fade={{ duration: 150, delay: 150 }}
