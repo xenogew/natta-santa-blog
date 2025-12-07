@@ -5,6 +5,7 @@ import { getSingletonHighlighter } from 'shiki';
 import slug from 'rehype-slug';
 import autoLinkHeadings from 'rehype-autolink-headings';
 import remarkHeadingId from 'remark-heading-id';
+import enhancedImage from '@lzinga/mdsvex-enhanced-images';
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
@@ -18,7 +19,7 @@ const mdsvexOptions = {
 			},
 		],
 	],
-	remarkPlugins: [remarkHeadingId],
+	remarkPlugins: [remarkHeadingId, enhancedImage],
 	highlight: {
 		highlighter: async (code, lang = 'text') => {
 			const highlighter = await getSingletonHighlighter({
