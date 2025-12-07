@@ -29,7 +29,7 @@ export type MarkdownPost = {
 	tags: Array<string>;
 	published: boolean;
 	path?: string;
-	cover?: string;
+	cover: string;
 };
 
 export type BlogPostsResponse<T> = {

@@ -11,7 +11,7 @@
 
 @custom-variant dark (&:where([data-mode="dark"], [data-mode="dark"] *));
 
-[data-theme="rocket"] {
-    --base-font-family: 'Noto Sans Thai Variable', system-ui, sans-serif;
-    --heading-font-family: 'Noto Sans Thai Variable', system-ui, sans-serif;
+[data-theme='rocket'] {
+	--base-font-family: 'Noto Sans Thai Variable', system-ui, sans-serif;
+	--heading-font-family: 'Noto Sans Thai Variable', system-ui, sans-serif;
 }
