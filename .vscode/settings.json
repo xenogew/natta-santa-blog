@@ -12,6 +12,7 @@
 	"files.insertFinalNewline": true,
 	"files.trimFinalNewlines": false,
 	"files.autoSave": "afterDelay",
+	"tailwindCSS.lint.suggestCanonicalClasses": "ignore",
 	"terminal.integrated.profiles.linux": {
 		"bash": {
 			"path": "bash",
