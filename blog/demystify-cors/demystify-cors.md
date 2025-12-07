@@ -12,7 +12,7 @@ tags:
 published: true
 slug: demystify-cors
 author: me
-sample: 'this is a sample Svelte + MDSVEX example...'
+sample: 'What is CORS and how to handle it'
 ---
 
 # {title}
@@ -106,6 +106,7 @@ Access-Control-Allow-Origin: *
 ### CORS Configuration
 
 #### โค้ดตัวอย่าง config แบบ Global
+
 ![cors-config](/{slug}/cors-config.svg)
 
 ```java
@@ -120,6 +121,7 @@ blog.natta.santa.cors.config.CorsConfig.java
 ![chrome-cors-global-succeed](/{slug}/chrome-cors-global-succeed.png)
 
 #### โค้ดตัวอย่าง config แบบ @CrossOrigin Annotation
+
 ![cors-cross-origin-annotation](/{slug}/cors-cross-origin-annotation.svg)
 
 1. ในโค้ดตัวอย่าง มองหา `@CrossOrigin` แล้วเอา comment ออก
@@ -142,4 +144,3 @@ CORS คือเมคานิกส์ป้องกันการ request 
 - [CORS with Spring by Baeldung](https://www.baeldung.com/spring-cors)
 - [CrossOrigin documentation](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/CrossOrigin.html)
 - [Repository](https://github.com/santa-sandbox/demystify-cors)
-
