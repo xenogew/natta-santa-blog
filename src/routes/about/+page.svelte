@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<title>About - Natta Santa</title>
+	<title>About Me - Natta Santa</title>
 </svelte:head>
 
 <section

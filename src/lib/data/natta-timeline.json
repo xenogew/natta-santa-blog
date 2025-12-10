@@ -45,7 +45,7 @@
 			"timestamp": "2018 April ~ 2019 February",
 			"description": "In-House PHP web application development, In the local Japanese company, take the main role on development in FE/BE part, features are <ul><li>Stocking,</li> <li>Staff work hours,</li> <li>Reporting,</li> <li>Web Scraper.</li></ul>",
 			"badgeText": "First Job JP",
-			"icon": null,
+			"icon": "fluent-emoji-high-contrast:sake",
 			"pub": false
 		},
 		{
@@ -53,15 +53,23 @@
 			"timestamp": "2019 March ~ 2020 February",
 			"description": "In-House Web Application developed with Spring Boot for the company's product Face Recognition System.<br/> On The Job experience: Circle CI, Docker, Linux, Azure Cloud.",
 			"badgeText": "Exp",
-			"icon": "",
+			"icon": "mynaui:face-id-solid",
 			"pub": false
 		},
 		{
 			"title": "Robert Half Japan - Application Engineer",
 			"timestamp": "2020 March ~ 2022 November",
-			"description": "Worked as contract employee for Rakuten ECSPD, developed Both FE & BE, take role and responsible in various of tasks, develop, design, write Unit Test, deployment, Java 8/11/17 experience, Cloud deployment, Containerize technologies.",
+			"description": "Worked as contract employee for Rakuten ECSPD, developed Both FE & BE, take role and responsible in various of tasks, develop, design, write Unit Test, deployment, Java 8/11/17 experience, Cloud deployment, Containerize technologies.<br/> On The Job experience: Spring Boot, Spring Batch, JUnit, Docker, Linux.",
 			"badgeText": "Exp",
-			"icon": "icon-park-outline:international",
+			"icon": "iconoir:shop",
+			"pub": false
+		},
+		{
+			"title": "Michael Page Intl. Japan - Application Engineer",
+			"timestamp": "2023 January ~ 2024 December",
+			"description": "Worked as contract employee for Rakuten Books, worked as Application Engineer, that take roles on implement until deliver the enterprise grade products to the Japan market. Take roles and work with various of tasks, develop, code review, design, write Unit Test, deployment, migrate Java 8 to 17, Cloud deployment, Containerize technologies, Kubernetes, Jenkins CI/CD.<br/> On The Job experience: Spring Boot, VueJS, JUnit, Docker, Kubernetes, Jenkins CI/CD, Docker, Linux, AWS Cloud.",
+			"badgeText": "Exp",
+			"icon": "uil:books",
 			"pub": false
 		}
 	]
