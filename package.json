@@ -28,10 +28,10 @@
 		"@sveltejs/adapter-vercel": "^6.2.0",
 		"@sveltejs/kit": "^2.49.2",
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
-		"@tailwindcss/vite": "^4.1.17",
+		"@tailwindcss/vite": "^4.1.18",
 		"@testing-library/jest-dom": "^6.9.1",
 		"@testing-library/svelte": "^5.2.9",
-		"@types/node": "^25.0.0",
+		"@types/node": "^25.0.1",
 		"eslint": "^9.39.1",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.13.1",
@@ -68,10 +68,10 @@
 		"rehype-autolink-headings": "^7.1.0",
 		"rehype-slug": "^6.0.0",
 		"remark-heading-id": "^1.0.1",
-		"shiki": "^3.19.0",
-		"svelte": "^5.45.8",
+		"shiki": "^3.20.0",
+		"svelte": "^5.45.10",
 		"tailwind-scrollbar": "^4.0.2",
-		"tailwindcss": "^4.1.17",
+		"tailwindcss": "^4.1.18",
 		"tailwindcss-animate": "^1.0.7"
 	}
 }
