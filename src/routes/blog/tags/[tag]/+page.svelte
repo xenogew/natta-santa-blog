@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
 	import type { PageData } from './$types';
+	import PostListItem from '$lib/components/PostListItem.svelte';
 
 	type Props = {
 		data: PageData;
@@ -9,19 +9,18 @@
 	let { tag, posts } = $derived(data);
 </script>
 
-<!-- ...Post HTML here -->
-<h2>{tag}</h2>
+<h2 class="h2 mb-4">Posts tagged with "{tag}"</h2>
 {#if posts.length}
-	<aside>
-		<h4>Posted in:</h4>
-		<ul>
-			{#each posts as post}
-				<li>
-					<a href={resolve(`/blog/${post.path}`)}>
-						{post.title}
-					</a>
-				</li>
-			{/each}
-		</ul>
-	</aside>
+	<div class="flex flex-col gap-4">
+		{#each posts as post (post.slug)}
+			<PostListItem
+				title={post.title}
+				subtitle={post.subtitle}
+				sample={post.sample}
+				path={post.slug}
+			/>
+		{/each}
+	</div>
+{:else}
+	<p>No posts found for this tag.</p>
 {/if}
