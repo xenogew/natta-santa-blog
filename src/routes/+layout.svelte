@@ -7,7 +7,8 @@
 	import Header from '$lib/components/layouts/Header.svelte';
 	import Footer from '$lib/components/layouts/Footer.svelte';
 	import { initDarkMode } from '$lib/stores';
-	import { Analytics } from '@vercel/analytics';
+	import { dev } from '$app/environment';
+	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 
 	type Props = {
 		data: LayoutData;
@@ -16,6 +17,7 @@
 
 	let { data, children }: Props = $props();
 	let { currentRoute } = $derived(data);
+	injectAnalytics({ mode: dev ? 'development' : 'production' });
 
 	onMount(() => {
 		initDarkMode();
@@ -46,5 +48,4 @@
 	</div>
 
 	<Footer />
-	<Analytics />
 </main>
