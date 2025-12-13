@@ -7,6 +7,7 @@
 	import Header from '$lib/components/layouts/Header.svelte';
 	import Footer from '$lib/components/layouts/Footer.svelte';
 	import { initDarkMode } from '$lib/stores';
+	import { Analytics } from '@vercel/analytics';
 
 	type Props = {
 		data: LayoutData;
@@ -45,4 +46,5 @@
 	</div>
 
 	<Footer />
+	<Analytics />
 </main>
